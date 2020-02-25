@@ -22,27 +22,27 @@
             content="Python conference in Colombia.">
         <meta name="twitter:creator" content="@soyelhijo">
         <meta name="twitter:title" content="PyCon Colombia 2021 | February 2021 | Colombia">
-        <title>Pycon 2021</title>
+        <title>PyCon Colombia 2021</title>
         <meta name="description" content="Python conference in Colombia.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
             integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 
         <link rel="stylesheet" href="css/styles.css?v=1.0.2">
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
             integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script>
@@ -59,10 +59,29 @@
 
     </head>
     <body>
+        <header class="navbar navbar-expand navbar-dark fixed-top flex-column flex-md-row bd-navbar">
+            <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="PyCon Colombia Icon">
+                <img src="img/icon.svg" alt="PyCon Colombia Icon" style="width: 50px;">
+            </a>
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+                <li class="nav-item dropdown">
+                    <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        v.2021
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                        <a class="dropdown-item" href="https://2020.pycon.co">v.2020</a>
+                        <a class="dropdown-item" href="https://2019.pycon.co">v.2019</a>
+                        <a class="dropdown-item" href="https://2018.pycon.co">v.2018</a>
+                        <a class="dropdown-item" href="https://2017.pycon.co">v.2017</a>
+                    </div>
+                </li>
+            </ul>
+        </header>
         <div id="stars2" class="hidden-xs"></div>
         <section class="section-container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+            <div class="row row justify-content-center">
+                <div class="col-sm-6 col-xs-10">
                     <h1>
                         <img src="img/logo.svg" alt="Pycon Colombia 2021">
                         <span>February</span>
@@ -74,8 +93,8 @@
         <div class="whale-background">
         <section class="section-container">
             <article class="hidden-xs">
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10">
                         <div class="title-intro">
                             <img src="img/background-intro-complete.png" alt="Welcome to a new dimension">
                             <div class="intro-container">
@@ -86,8 +105,8 @@
                 </div>
             </article>
             <article>
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                <div class="row justify-content-center">
+                    <div class="col-sm-10 col-xs-10">
                         <div class="text-container">
                             <p>
                                 <span>We want to invite you to</span>
@@ -97,7 +116,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-1 col-sm-offset-10 col-xs-1 col-xs-offset-10">
+                    <div class="col-sm-1 col-xs-1">
                         <img class="planet-pink" src="img/planet-pink.png" alt="">
                     </div>
                 </div>
