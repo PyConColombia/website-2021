@@ -1,0 +1,33 @@
+[project]
+name = pyconcolombia
+url = http://pycon.co
+url_style = absolute
+
+[packages]
+lektor-google-analytics = 0.1.3
+
+[alternatives.es]
+name = Español
+primary = yes
+locale = es
+
+[alternatives.en]
+name = English
+url_prefix = /en/
+locale = en
+
+[servers.develop]
+name = Develop
+enabled = yes
+default = yes
+target = ghpages+https://pyconcolombia/website-develop?cname=develop.pycon.co
+
+[servers.production]
+name = Production
+enabled = yes
+target = ghpages+https://pyconcolombia/website-2021?cname=2021.pycon.co
+
+[servers.www]
+name = Production
+enabled = yes
+target = ghpages+https://pyconcolombia/website-www?cname=www.pycon.co

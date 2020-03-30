@@ -1,0 +1,4 @@
+_model: event
+
+---
+_template: index.html
