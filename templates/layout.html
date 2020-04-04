@@ -1,5 +1,17 @@
 {%- set base_url = '/'|url(alt='es') -%}
 
+{%- from "macros/translation.html" import transbag -%}
+
+{%- macro menu_item(identifier) -%}
+    {% set identifier_url = '/' + identifier %}
+    {% set trans_url = identifier_url|url(alt=this.alt) %}
+    {% set this_is_child = this.is_child_of(identifier_url) %}
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ trans_url }}">{{ transbag('menu', this.alt, identifier) }}<span class="sr-only"></span></a>
+    </li>
+{%- endmacro -%}
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -52,25 +64,42 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand navbar-dark fixed-top flex-column flex-md-row bd-navbar">
-        <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="PyCon Colombia Icon">
+    <nav class="navbar navbar-expand navbar-dark fixed-top flex-column flex-md-row bd-navbar">
+        <a class="navbar-brand mr-0 mr-md-2" href="{{'/'|url(alt=this.alt)}}" aria-label="PyCon Colombia Icon">
             <img src="{{ base_url }}static/img/icon.svg" alt="PyCon Colombia Icon" style="width: 50px;">
         </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {{ menu_item('recursos') }}
+            </ul>
+        </div>
         <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
             <li class="nav-item dropdown">
-                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown"
+                <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="pycon-version" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     v.2021
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="pycon-version">
                     <a class="dropdown-item" href="https://2020.pycon.co">v.2020</a>
                     <a class="dropdown-item" href="https://2019.pycon.co">v.2019</a>
                     <a class="dropdown-item" href="https://2018.pycon.co">v.2018</a>
                     <a class="dropdown-item" href="https://2017.pycon.co">v.2017</a>
                 </div>
             </li>
+            <li class="nav-item active">
+                {% if this.alt == 'en' %}
+                    <a class="nav-link" href="{{ '.'|url(alt='es') }}">ES</a>
+                {% else %}
+                    <a class="nav-link" href="{{ '.'|url(alt='en') }}">EN</a>
+                {% endif %}
+            </li>
+
+
+
+
+            
         </ul>
-    </header>
+    </nav>
     <div id="stars2" class="hidden-xs"></div>
 
     <div class="ga-script">{{ generate_google_analytics() }}</div>
