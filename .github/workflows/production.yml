@@ -1,9 +1,9 @@
-name: Develop CI
+name: Production CI
 
 on:
   push:
     branches:
-      - develop
+      - production
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
         with:
-          ref: develop
+          ref: production
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
@@ -35,4 +35,4 @@ jobs:
         env:
           LEKTOR_DEPLOY_USERNAME: ${{ secrets.LEKTOR_DEPLOY_USERNAME }}
           LEKTOR_DEPLOY_PASSWORD: ${{ secrets.LEKTOR_DEPLOY_PASSWORD }}
-        run: lektor deploy develop
+        run: lektor deploy production
