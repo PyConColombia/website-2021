@@ -6,7 +6,7 @@
   <img width="150" src="assets/static/img/opimage.jpg">
 </a>
 
-[![Build Status][build-badge]][build]
+![Build Status][build-badge]
 [![MIT License][license-badge]][LICENSE]
 [![Python Status](https://img.shields.io/badge/Python-%33.7-blue.svg?longCache=true&style=flat-square)](https://www.python.org/)
 [![PRs Welcome][prs-badge]][prs] 
@@ -143,8 +143,7 @@ ___
 
 </div>
 
-[build-badge]: https://github.com/PyConColombia/website-2021/workflows/Develop%20CI/badge.svg
-[build]: https://travis-ci.org/PyConColombia/website-2021
+[build-badge]: https://github.com/PyConColombia/website-2021/workflows/Develop%20CI/badge.svg??branch=develop
 [license-badge]: https://img.shields.io/npm/l/all-contributors.svg?style=flat-square
 [license]: https://github.com/PyConColombia/website-2021/blob/develop/LICENSE
 [prs-badge]: https://img.shields.io/badge/Issues-welcome-brightgreen.svg?style=flat-square
