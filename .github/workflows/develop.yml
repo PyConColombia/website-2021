@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - develop
-    
 
 jobs:
   deploy:
@@ -23,9 +22,9 @@ jobs:
         with:
           path: |
             ~/.cache/pip
-            ~/.cache/lektor
-          key: ${{ runner.os }}-py-develop
-          restore-keys: ${{ runner.os }}-py-develop
+            ~/.cache/lektor/builds
+          key: ${{ runner.os }}-py-develop-cache
+          restore-keys: ${{ runner.os }}-py-develop-cache
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
