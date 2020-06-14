@@ -30,6 +30,10 @@ jobs:
         run: |
           python --version
           python -m pip list
+      - name: Install plugins
+        run: lektor plugins reinstall
+      - name: Build site
+        run: lektor build
       - name: Lektor deploy
         env:
           LEKTOR_DEPLOY_USERNAME: ${{ secrets.LEKTOR_DEPLOY_USERNAME }}
