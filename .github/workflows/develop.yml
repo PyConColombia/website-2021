@@ -18,6 +18,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: develop
+      - name: Cache pip
+        uses: actions/cache@v1
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/lektor/builds
+          key: ${{ runner.os }}-py-3.7
+          restore-keys: ${{ runner.os }}-py-3.7
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
@@ -26,6 +34,7 @@ jobs:
       - name: Install python dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install -U pip wheel
           pip install lektor
       - name: Show python environment
         run: |
