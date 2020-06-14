@@ -23,7 +23,7 @@ jobs:
         with:
           path: |
             ~/.cache/pip
-            ~/.cache/lektor/builds
+            ~/.cache/lektor
           key: ${{ runner.os }}-py-3.7
           restore-keys: ${{ runner.os }}-py-3.7
       - name: Setup Python
