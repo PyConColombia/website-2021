@@ -30,5 +30,6 @@ jobs:
           python -m pip list
       - name: Lektor deploy
         env:
+          LEKTOR_DEPLOY_USERNAME: ${{ secrets.LEKTOR_DEPLOY_USERNAME }}
           LEKTOR_DEPLOY_KEY: ${{ secrets.LEKTOR_DEPLOY_KEY }}
         run: lektor deploy develop
