@@ -143,7 +143,7 @@ ___
 
 </div>
 
-[build-badge]: https://github.com/PyConColombia/website-2021/workflows/Develop%20CI/badge.svg??branch=develop
+[build-badge]: https://github.com/PyConColombia/website-2021/workflows/Develop%20CI/badge.svg?branch=develop
 [license-badge]: https://img.shields.io/npm/l/all-contributors.svg?style=flat-square
 [license]: https://github.com/PyConColombia/website-2021/blob/develop/LICENSE
 [prs-badge]: https://img.shields.io/badge/Issues-welcome-brightgreen.svg?style=flat-square
