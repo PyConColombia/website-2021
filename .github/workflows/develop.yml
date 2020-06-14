@@ -28,5 +28,8 @@ jobs:
         run: |
           python --version
           python -m pip list
-      - name: Run python lint
+      - name: Lektor deploy
+        env:
+          LEKTOR_DEPLOY_USERNAME: ${{ secrets.LEKTOR_DEPLOY_USERNAME }}
+          LEKTOR_DEPLOY_PASSWORD: ${{ secrets.LEKTOR_DEPLOY_PASSWORD }}
         run: lektor deploy develop
