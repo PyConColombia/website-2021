@@ -1,9 +1,13 @@
 name: Develop CI
 
 on:
+  pull_request:
+    branches:
+      - develop
   push:
     branches:
       - develop
+    
 
 jobs:
   deploy:
@@ -32,6 +36,7 @@ jobs:
       - name: Build site
         run: lektor build
       - name: Lektor deploy
+        if: github.event == 'push'
         env:
           LEKTOR_DEPLOY_USERNAME: ${{ secrets.LEKTOR_DEPLOY_USERNAME }}
           LEKTOR_DEPLOY_PASSWORD: ${{ secrets.LEKTOR_DEPLOY_PASSWORD }}
