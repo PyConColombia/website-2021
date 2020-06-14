@@ -24,8 +24,8 @@ jobs:
           path: |
             ~/.cache/pip
             ~/.cache/lektor
-          key: ${{ runner.os }}-py-3.7
-          restore-keys: ${{ runner.os }}-py-3.7
+          key: ${{ runner.os }}-py-develop
+          restore-keys: ${{ runner.os }}-py-develop
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
