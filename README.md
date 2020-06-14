@@ -3,7 +3,7 @@
 # Sitio Web - PyCon Colombia 2021
 
 <a href="https://github.com/PyConColombia">
-  <img width="150" src="img/opimage.jpg">
+  <img width="150" src="assets/static/img/opimage.jpg">
 </a>
 
 [![Build Status][build-badge]][build]
@@ -143,7 +143,7 @@ ___
 
 </div>
 
-[build-badge]: https://img.shields.io/travis/PyConColombia/website-2021.svg?style=flat-square
+[build-badge]: https://github.com/PyConColombia/website-2021/workflows/Develop%20CI/badge.svg
 [build]: https://travis-ci.org/PyConColombia/website-2021
 [license-badge]: https://img.shields.io/npm/l/all-contributors.svg?style=flat-square
 [license]: https://github.com/PyConColombia/website-2021/blob/develop/LICENSE
