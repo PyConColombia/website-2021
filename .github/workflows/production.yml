@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy develop branch
+    name: Deploy production branch
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -32,6 +32,7 @@ jobs:
       - name: Build site
         run: lektor build
       - name: Lektor deploy
+        if: github.event == 'push'
         env:
           LEKTOR_DEPLOY_USERNAME: ${{ secrets.LEKTOR_DEPLOY_USERNAME }}
           LEKTOR_DEPLOY_PASSWORD: ${{ secrets.LEKTOR_DEPLOY_PASSWORD }}
