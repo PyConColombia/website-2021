@@ -1,4 +1,8 @@
-_model: event
+_model:
+
+event
 
 ---
 _template: index.html
+---
+sections: timeline

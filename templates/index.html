@@ -20,7 +20,7 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-10">
                         <div class="title-intro">
-                            <img src="{{ base_url }}static/img/background-intro-complete.png" alt="Welcome to a new dimension">
+                            <img src="{{ base_url }}static/img/background-intro-complete.svg" alt="Welcome to a new dimension">
                             <div class="intro-container">
                                 <h2>Welcome to<span>a new dimension</span></h2>
                             </div>
@@ -41,18 +41,13 @@
                         </div>
                     </div>
                     <div class="col-sm-1 col-xs-1">
-                        <img class="planet-pink" src="{{ base_url }}static/img/planet-pink.png" alt="">
+                        <img class="planet-pink" src="{{ base_url }}static/img/planet-pink.svg" alt="">
                     </div>
                 </div>
             </article>
         </section>
     </div>
-    <section class="section-container">
-        <div class="row">
-            <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-                <div class="soon-title">More information soon!</div>
-            </div>
-        </div>
-    </section>
-
+    {% if 'timeline' in this.sections %}
+        {% include './partials/_timeline.html' %}
+    {% endif %}
 {%- endblock -%}
