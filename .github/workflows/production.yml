@@ -14,14 +14,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: production
-      - name: Cache pip
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.cache/pip
-            ~/.cache/lektor/builds
-          key: ${{ runner.os }}-py-production-cache
-          restore-keys: ${{ runner.os }}-py-production-cache
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
