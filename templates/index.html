@@ -3,56 +3,59 @@
 {% extends "layout.html" %}
 
 {%- block body -%}
-    <section class="section-container">
-        <div class="row row justify-content-center">
-            <div class="col-sm-6 col-xs-10">
-                <h1>
-                    <img src="{{ base_url }}static/img/logo.svg" alt="Pycon Colombia 2021">
-                    <span>February</span>
-                    <span>2021</span>
-                </h1>
-            </div>
-        </div>
-    </section>
-    <div class="whale-background">
+    <div class="container">
+
         <section class="section-container">
-            <article class="hidden-xs">
-                <div class="row justify-content-center">
-                    <div class="col-sm-10">
-                        <div class="title-intro">
-                            <img src="{{ base_url }}static/img/background-intro-complete.png" alt="Welcome to a new dimension">
-                            <div class="intro-container">
-                                <h2>Welcome to<span>a new dimension</span></h2>
+            <div class="row row justify-content-center">
+                <div class="col-sm-6 col-xs-10">
+                    <h1>
+                        <img src="{{ base_url }}static/img/logo.svg" alt="Pycon Colombia 2021">
+                        <span>February</span>
+                        <span>2021</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <div class="whale-background">
+            <section class="section-container">
+                <article class="hidden-xs">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-10">
+                            <div class="title-intro">
+                                <img src="{{ base_url }}static/img/background-intro-complete.png" alt="Welcome to a new dimension">
+                                <div class="intro-container">
+                                    <h2>Welcome to<span>a new dimension</span></h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-            <article>
-                <div class="row justify-content-center">
-                    <div class="col-sm-10 col-xs-10">
-                        <div class="text-container">
-                            <p>
-                                <span>We want to invite you to</span>
-                                One of the finest <br>
-                                Python conferences
-                                <span>In the world</span>
-                            </p>
+                </article>
+                <article>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-10 col-xs-10">
+                            <div class="text-container">
+                                <p>
+                                    <span>We want to invite you to</span>
+                                    One of the finest <br>
+                                    Python conferences
+                                    <span>In the world</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-1 col-xs-1">
+                            <img class="planet-pink" src="{{ base_url }}static/img/planet-pink.png" alt="">
                         </div>
                     </div>
-                    <div class="col-sm-1 col-xs-1">
-                        <img class="planet-pink" src="{{ base_url }}static/img/planet-pink.png" alt="">
-                    </div>
+                </article>
+            </section>
+        </div>
+        <section class="section-container">
+            <div class="row">
+                <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <div class="soon-title">More information soon!</div>
                 </div>
-            </article>
+            </div>
         </section>
     </div>
-    <section class="section-container">
-        <div class="row">
-            <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-                <div class="soon-title">More information soon!</div>
-            </div>
-        </div>
-    </section>
 
 {%- endblock -%}

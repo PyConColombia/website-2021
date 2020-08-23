@@ -3,21 +3,21 @@
 {% extends "layout.html" %}
 
 {%- block body -%}
-<section class="section-container">
-    <div class="container">
+<div class="container">
+    <section class="section-container">
         <div class="content">
             <div class="row justify-content-center">
                 <h1 class="title text-center">{{ this.title }}</h2>
-                <div class="row">
-                    <div class="row justify-content-center">
-                        <div class="col-md-2 col-sm-12">
-                            <h3>Profile</h3>
-                            <a href="https://drive.google.com/open?id=1P9ef0xGPCdAEsRL13kV2rSjfiCacBUbH" target="blank_">
-                                <img src="{{ base_url }}static/img/resources/profile.jpg" class="img-fluid img-thumbnail"
-                                    alt="Responsive image">
-                            </a>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-2 col-sm-12">
+                        <h3>Profile</h3>
+                        <a href="https://drive.google.com/open?id=1P9ef0xGPCdAEsRL13kV2rSjfiCacBUbH" target="blank_">
+                            <img src="{{ base_url }}static/img/resources/profile.jpg" class="img-fluid img-thumbnail"
+                                alt="Responsive image">
+                        </a>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <h3>Facebook - Groups</h3>
                         <a href="https://drive.google.com/open?id=1cfJwxIvk0E0UAI8O3s__zny9BesP_XSy" target="blank_">
@@ -65,8 +65,8 @@
                 </div>
             </div>
         </div>
-    </div>
-
-</section>
+        
+    </section>
+</div>
 
 {%- endblock -%}
