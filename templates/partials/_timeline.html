@@ -1,0 +1,39 @@
+{% set timeline = site.query('/cronograma', alt=this.alt).order_by('datetime') %}
+
+<section class="section-container">
+    <article class="timeline">
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
+                <div class="title-intro">
+                    <img src="{{ base_url }}static/img/title.svg" alt="Timeline title">
+                    <div class="intro-container">
+                        <h2><span>Schedule 20 - 21</span></h2>
+                    </div>
+                </div>
+            </div>
+            {% if timeline %}
+                <div class="col-sm-10">
+                    {% for item in timeline %}
+                        <div class="row align-items-center timeline-item">
+                            <div class="col-md-2 order-md-2">
+                                <div class="text-center">
+                                    <img src="{{ base_url }}static/img/timeline-item-{{loop.index % 4}}.svg" class="timeline-image" alt="Timeline item 1">
+                                </div>
+                            </div>
+                            <div class="col-md-5 order-md-{{ '1' if loop.index % 2 == 1 else '3' }}">
+                                <div class="text-{{ 'left' if loop.index % 2 == 1 else 'right' }} timeline-description">
+                                    {{ item.description }}
+                                </div>
+                            </div>
+                            <div class="col-md-5 order-md-{{ '3' if loop.index % 2 == 1 else '1' }}">
+                                <div class="text-{{ 'left' if loop.index % 2 == 1 else 'right' }} timeline-date">
+                                    {{ item.datetime|dateformat('dd MMMM Y') }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </article>
+</section>

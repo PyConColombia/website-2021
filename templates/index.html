@@ -57,5 +57,7 @@
             </div>
         </section>
     </div>
-
+    {% if 'timeline' in this.sections %}
+        {% include './partials/_timeline.html' %}
+    {% endif %}
 {%- endblock -%}
