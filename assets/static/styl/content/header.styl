@@ -1,0 +1,37 @@
+@media (max-width 991px) 
+  .navbar 
+      background-image linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4))
+    &.scrolled 
+      background-image linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
+
+    ul.navbar-nav 
+      li
+        padding 20px
+
+    .navbar-collapse
+      .scrollable-menu
+        height auto
+        max-height 500px
+        overflow-x hidden
+        margin 0 -40px
+
+        .dropdown-menu
+          a
+            font-size 2.4rem !important
+            margin 0 auto
+            padding 10px 0
+            text-transform uppercase
+            width auto !important
+
+      li
+        background-color none
+        font-weight: 300
+        letter-spaing 5px
+        line-height 1.2
+        opacity 0.98
+        text-align center
+        text-transform uppercase
+
+        .nav-link, a.dropdown-item
+            color #310441 !important
+            font-size 2.4rem !important
