@@ -86,9 +86,19 @@ footer
     a
         color color-text-primary
 
-
-
-
+.timeline
+    margin 150px 0
+    .timeline-item
+        .timeline-image
+            max-width 100px
+        .timeline-date
+            color color-white
+            font-size 28px
+            text-transform capitalize
+        .timeline-description
+            color color-white
+            font-size 40px
+            padding-top 20%
 
 @media (max-width 991px)
 
@@ -119,6 +129,10 @@ footer
     footer
         p
             font-size 16px
+
+    .timeline
+        .timeline-item
+            margin 50px 0
 
 
 @media (max-width 767px)
@@ -158,3 +172,9 @@ footer
                     margin-bottom 15px
         p
             font-size 16px
+
+    .timeline
+        .timeline-item
+            margin 50px 0
+            .timeline-description
+                padding-top 0
