@@ -1,18 +1,23 @@
+@import "./tokens/variable-color"
+
 body, h1, h2, h3, h4, h5, h6, a, p, li, ul
     font-family font-principal !important
 
-h1, h2, h3, h4 
+h1, h2, h3, h4
     color #ffffff
     font-weight 700
     text-shadow 0 5px 10px rgba(9,5,56,0.9)
 
+p, ol, ul
+    color #ffffff
+
 body
-    background url('../img/background.jpg') top center repeat-y
+    background url('../img/background.webp') top center repeat-y
     background-attachment fixed
     background-size 100% auto
 
 .asteroids
-    background url('../img/asteroids.png') top center repeat-y
+    background url('../img/asteroids.webp') top center repeat-y
     background-size 100% auto
 
 .section-container
@@ -26,6 +31,38 @@ body
     h2, h3, h4
         margin 50px 0 20px 0
 
+    p, ol, ul, a
+        color color-white
+        font-size 1.3rem
+
+    p
+        text-align justify
+
+    a
+        text-decoration underline
+        .btn
+            text-decoration none
+
     .title
         margin 100px 0
         text-align center
+
+.btn
+    font-size:1.4rem
+    font-weight 600
+    border-radius 5rem
+    border 0
+    box-shadow 0.1rem 0.3rem 1.2rem rgba(132, 126, 126, 0.6)
+    transition all 0.2s
+    text-decoration none !important
+
+    &.btn-lg
+        line-height 1.5
+        padding 0.5rem 4.5rem
+
+    &.btn-primary
+        border 3px solid color-white
+        color color-accent !important
+        background-color color-white
+        &:hover
+            border 3px solid color-accent

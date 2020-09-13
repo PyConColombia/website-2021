@@ -1,15 +1,19 @@
 {%- set base_url = '/'|url(alt='es') -%}
 
 {% extends "layout.html" %}
+{%- from "macros/translation.html" import transbag -%}
+
+{%- set t_title_cfp = transbag('translate', this.alt, 'title_cfp') -%}
+{%- set t_message_cfp = transbag('translate', this.alt, 'message_cfp') -%}
+{%- set t_button_cfp = transbag('translate', this.alt, 'button_cfp') -%}
 
 {%- block body -%}
     <div class="container">
-
         <section class="section-container">
             <div class="row row justify-content-center">
                 <div class="col-sm-6 col-xs-10">
                     <h1>
-                        <img src="{{ base_url }}static/img/logo.svg" alt="Pycon Colombia 2021">
+                        <img class="logo-index" src="{{ base_url }}static/img/logo.webp" alt="Pycon Colombia 2021">
                         <span>February</span>
                         <span>2021</span>
                     </h1>
@@ -22,7 +26,7 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-10">
                             <div class="title-intro">
-                                <img src="{{ base_url }}static/img/background-intro-complete.png" alt="Welcome to a new dimension">
+                                <img src="{{ base_url }}static/img/background-intro-complete.webp" alt="Welcome to a new dimension">
                                 <div class="intro-container">
                                     <h2>Welcome to<span>a new dimension</span></h2>
                                 </div>
@@ -43,16 +47,40 @@
                             </div>
                         </div>
                         <div class="col-sm-1 col-xs-1">
-                            <img class="planet-pink" src="{{ base_url }}static/img/planet-pink.png" alt="">
+                            <img class="planet-pink" src="{{ base_url }}static/img/planet-pink.webp" alt="">
                         </div>
                     </div>
                 </article>
             </section>
         </div>
+
+        {% set is_speakers_call_enabled = this.accepted_speakers_link and 'speakers-call' in this.sections %}
+        {% set is_speakers_call_section_closed = 'speakers-call' in this.closed_sections %}
+
         <section class="section-container">
             <div class="row">
                 <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-                    <div class="soon-title">More information soon!</div>
+                    {% if is_speakers_call_enabled %}
+                        <div class="event-description call-for-papers {{ 'text-center' if not is_tickets_section_enabled else '' }} col-md-{{ '12' if not is_tickets_section_enabled else '5' }} wow fadeInRight"
+                            data-wow-delay="0.6s" data-wow-duration="1.2s" data-wow-offset="-1000">
+                            <div class="wrapper">
+                                <h1>{{ t_title_cfp }}</h1>
+                                {% if not is_speakers_call_section_closed %}
+                                <div class="call-to-actions row">
+                                    <div class="text-center col-md-12">
+                                        <a class="btn btn-primary btn-lg" href="{{ '/cfp'|url(alt=this.alt) }}">
+                                            {{ t_button_cfp }}
+                                        </a>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="text-center col-md-12">
+                                    <p>{{ t_message_cfp }}</p>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </section>
