@@ -23,11 +23,11 @@ default = yes
 target = ghpages+https://pyconcolombia/website-develop?cname=develop.pycon.co
 
 [servers.production]
-name = Production
+name = Production 2021
 enabled = yes
 target = ghpages+https://pyconcolombia/website-2021?cname=2021.pycon.co
 
 [servers.www]
-name = Production
+name = Production WWW
 enabled = yes
 target = ghpages+https://pyconcolombia/website-www?cname=www.pycon.co
