@@ -2,3 +2,7 @@ _model: event
 
 ---
 _template: index.html
+---
+sections: newsletter
+---
+accepted_speakers_link: https://forms.gle/NeoGPiRcVFAJUYqh7

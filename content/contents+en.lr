@@ -1,1 +1,8 @@
 _template: index.html
+<<<<<<< HEAD
+=======
+---
+accepted_speakers_link: https://forms.gle/NeoGPiRcVFAJUYqh7
+---
+sections: timeline, speakers-call, news, newsletter
+>>>>>>> 0762fef (Added newsletter form [WIP] #21)
