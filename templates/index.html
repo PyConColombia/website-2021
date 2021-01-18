@@ -8,7 +8,9 @@
 {%- set t_button_cfp = transbag('translate', this.alt, 'button_cfp') -%}
 
 {%- block body -%}
-    {% include './partials/_news.html' %}
+    {% if 'news' in this.sections %}
+        {% include './partials/_news.html' %}
+    {% endif %}
     <div class="container">
         <section class="section-container">
             <div class="row row justify-content-center">
@@ -87,4 +89,8 @@
     {% if 'timeline' in this.sections %}
         {% include './partials/_timeline.html' %}
     {% endif %}
+    {% if 'newsletter' in this.sections %}
+        {% include './partials/_newsletter.html' %}
+    {% endif %}
+    
 {%- endblock -%}
