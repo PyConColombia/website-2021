@@ -1,8 +1,10 @@
-_model: event
+_model:
+
+event
 
 ---
 _template: index.html
 ---
-sections: newsletter
+sections: timeline, speakers-call, news, newsletter
 ---
 accepted_speakers_link: https://forms.gle/NeoGPiRcVFAJUYqh7

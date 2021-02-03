@@ -12,11 +12,13 @@ h1
         text-align right
 
 .whale-background
-    background url('../img/whale.png') left bottom no-repeat
+    background url('../img/whale.webp') left bottom no-repeat
     background-size auto
     margin auto
     max-width 1500px
 
+.logo-index
+    width 100%
 
 .title-intro
     margin 50px auto
@@ -89,8 +91,70 @@ footer
     a
         color color-text-primary
 
+.timeline
+    margin 150px 0
+    .timeline-item
+        .timeline-image
+            max-width 100px
+        .timeline-date
+            color color-white
+            font-size 28px
+            text-transform capitalize
+        .timeline-description
+            color color-white
+            font-size 40px
+            padding-top 20%
 
+.newsletter
+    margin 150px 0
+    .title
+        text-align center
+    .form-subscribe
+        margin 30px 0
+        input, select
+            border none
+            border-radius 25px
+            height 40px
+            outline none
+            padding-left 20px
+            padding-right 20px
+            width 100%
+    .subscribe-btn
+        font-size inherit
+        height 40px
+        width 100%
 
+.badge-anniversary
+    float right 
+    height 100px
+    margin-top 100px
+    position fixed
+    right 0
+    width auto
+    z-index 1
+
+.modal-news
+    .modal-header
+        padding-top 0
+        padding-bottom 0
+    .close-modal
+        background none
+        border none
+        color #000
+        font-size 2rem
+        font-weight normal
+        opacity 1
+        outline none
+        top 0
+    .modal-body
+        .logo-container
+            padding 30px 0
+            text-align center
+            .logo-modal
+                max-width 500px
+                width 100%
+        p
+            color #000
 
 
 .newsletter
@@ -151,8 +215,15 @@ footer
         p
             font-size 16px
 
+    .timeline
+        .timeline-item
+            margin 50px 0
+
 
 @media (max-width 767px)
+    body
+        margin 0 20px
+
     h1
         span 
             font-size 25px

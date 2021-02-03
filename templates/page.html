@@ -1,0 +1,25 @@
+{%- set base_url = '/'|url(alt='es') -%}
+
+{% extends "layout.html" %}
+
+{%- block body -%}
+    <section class="section-container">
+        <article class="timeline">
+            <div class="row justify-content-center">
+                <div class="col-sm-10">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{ this.title }}</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10">
+                    <div class="content">
+                        {{ this.body }}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{%- endblock -%}

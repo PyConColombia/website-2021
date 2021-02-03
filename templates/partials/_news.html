@@ -1,0 +1,36 @@
+{% from "/macros/translation.html" import transbag %}
+
+{%- set t_news_intro = transbag('translate', this.alt, 'news_intro') -%}
+{%- set t_news_description = transbag('translate', this.alt, 'news_description') -%}
+{%- set t_news_end = transbag('translate', this.alt, 'news_end') -%}
+
+<!-- Modal -->
+<div class="modal fade" id="newsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="newsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-news">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="logo-container">
+                                <img class="logo-modal" src="{{ base_url }}static/img/logo_reverse.webp" alt="Pycon Colombia 2021">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{t_news_intro}}</p>
+                            <p>{{t_news_description}}</p>
+                            <p>{{t_news_end}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

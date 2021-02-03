@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{%- from "macros/translation.html" import transbag -%}
+
+{%- block body -%}
+    <script>
+        window.location.replace('{{"/codigo-de-conducta"|url(alt="en")}}');
+    </script>
+{%- endblock -%}
