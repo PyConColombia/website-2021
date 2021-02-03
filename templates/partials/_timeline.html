@@ -1,4 +1,7 @@
+{% from "/macros/translation.html" import transbag %}
+
 {% set timeline = site.query('/cronograma', alt=this.alt).order_by('datetime') %}
+{%- set t_timeline_title = transbag('translate', this.alt, 'timeline_title') -%}
 
 <section class="section-container">
     <article class="timeline">
@@ -7,7 +10,7 @@
                 <div class="title-intro">
                     <img src="{{ base_url }}static/img/title.webp" alt="Timeline title">
                     <div class="intro-container">
-                        <h2><span>Schedule 20 - 21</span></h2>
+                        <h2><span>{{t_timeline_title}}</span></h2>
                     </div>
                 </div>
             </div>
