@@ -3,6 +3,13 @@
 {% extends "layout.html" %}
 {%- from "macros/translation.html" import transbag -%}
 
+{%- set t_intro_title_1 = transbag('translate', this.alt, 'intro_title_1') -%}
+{%- set t_intro_title_2 = transbag('translate', this.alt, 'intro_title_2') -%}
+{%- set t_intro_description_1 = transbag('translate', this.alt, 'intro_description_1') -%}
+{%- set t_intro_description_2 = transbag('translate', this.alt, 'intro_description_2') -%}
+{%- set t_intro_description_3 = transbag('translate', this.alt, 'intro_description_3') -%}
+{%- set t_intro_description_4 = transbag('translate', this.alt, 'intro_description_4') -%}
+
 {%- set t_title_cfp = transbag('translate', this.alt, 'title_cfp') -%}
 {%- set t_message_cfp = transbag('translate', this.alt, 'message_cfp') -%}
 {%- set t_button_cfp = transbag('translate', this.alt, 'button_cfp') -%}
@@ -29,7 +36,7 @@
                             <div class="title-intro">
                                 <img src="{{ base_url }}static/img/background-intro-complete.webp" alt="Welcome to a new dimension">
                                 <div class="intro-container">
-                                    <h2>Welcome to<span>a new dimension</span></h2>
+                                    <h2>{{t_intro_title_1}}<span>{{t_intro_title_2}}</span></h2>
                                 </div>
                             </div>
                         </div>
@@ -40,10 +47,10 @@
                         <div class="col-sm-10 col-xs-10">
                             <div class="text-container">
                                 <p>
-                                    <span>We want to invite you to</span>
-                                    One of the finest <br>
-                                    Python conferences
-                                    <span>In the world</span>
+                                    <span>{{t_intro_description_1}}</span>
+                                    {{t_intro_description_2}} <br>
+                                    {{t_intro_description_3}}
+                                    <span>{{t_intro_description_4}}</span>
                                 </p>
                             </div>
                         </div>
