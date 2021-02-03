@@ -66,8 +66,34 @@
     
     
 
-    <li class="nav-item active">
-        <a class="nav-link" href="/en/resources/">Resources<span class="sr-only"></span></a>
+    <li class="nav-item">
+        <a class="nav-link 
+                 
+                " href="/en/resources/">
+            Resources<span class="sr-only"></span>
+        </a>
+    </li>
+                
+    
+    
+
+    <li class="nav-item">
+        <a class="nav-link 
+                 
+                " href="/en/schedule/">
+            Schedule<span class="sr-only"></span>
+        </a>
+    </li>
+                
+    
+    
+
+    <li class="nav-item">
+        <a class="nav-link 
+                 
+                alt" href="/en/cfp/">
+            Call for Proposals<span class="sr-only"></span>
+        </a>
     </li>
             </ul>
             <ul class="navbar-nav">
@@ -104,14 +130,44 @@
         ga('send', 'pageview');
 </script>
 </div>
-    <img src="/static/img/anniversary.svg" alt="badge" class="badge-anniversary"><div class="container">
+    <img src="/static/img/anniversary.svg" alt="badge" class="badge-anniversary">
+        <!-- Modal -->
+<div class="modal fade" id="newsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="newsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable modal-news">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="logo-container">
+                                <img class="logo-modal" src="/static/img/logo_reverse.webp" alt="Pycon Colombia 2021">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <p>Hi everyone!</p>
+                            <p>Due to the COVID-19 health emergency, PyCon Colombia 2021 will be 100% online on a new date, not in February as usual, it will be in June instead!! We will be posting further details, keep in touch. We appreciate your support, see you in June 2021!!</p>
+                            <p>Thank you</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div class="container">
         <section class="section-container">
             <div class="row row justify-content-center">
                 <div class="col-sm-6 col-xs-10">
                     <h1>
-                        <img src="/static/img/logo.svg" alt="Pycon Colombia 2021">
-                        <!-- <span>February</span>
-                        <span>2021</span> -->
+                        <img class="logo-index" src="/static/img/logo.webp" alt="Pycon Colombia 2021">
                     </h1>
                 </div>
             </div>
@@ -122,7 +178,7 @@
                     <div class="row justify-content-center">
                         <div class="col-sm-10">
                             <div class="title-intro">
-                                <img src="/static/img/background-intro-complete.png" alt="Welcome to a new dimension">
+                                <img src="/static/img/background-intro-complete.webp" alt="Welcome to a new dimension">
                                 <div class="intro-container">
                                     <h2>Welcome to<span>a new dimension</span></h2>
                                 </div>
@@ -143,21 +199,101 @@
                             </div>
                         </div>
                         <div class="col-sm-1 col-xs-1">
-                            <img class="planet-pink" src="/static/img/planet-pink.png" alt="">
+                            <img class="planet-pink" src="/static/img/planet-pink.webp" alt="">
                         </div>
                     </div>
                 </article>
             </section>
         </div>
+
+        
+        
+
         <section class="section-container">
             <div class="row">
                 <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
-                    <div class="soon-title">More information soon!</div>
+                    
+                        <div class="event-description call-for-papers text-center col-md-12 wow fadeInRight"
+                            data-wow-delay="0.6s" data-wow-duration="1.2s" data-wow-offset="-1000">
+                            <div class="wrapper">
+                                <h1>Call for Speakers</h1>
+                                
+                                <div class="call-to-actions row">
+                                    <div class="text-center col-md-12">
+                                        <a class="btn btn-primary btn-lg" href="/en/cfp/">
+                                            Call for Proposals
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    
                 </div>
             </div>
         </section>
     </div>
+    
+        
 
+<section class="section-container">
+    <article class="timeline">
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
+                <div class="title-intro">
+                    <img src="/static/img/title.webp" alt="Timeline title">
+                    <div class="intro-container">
+                        <h2><span>Schedule 2021</span></h2>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="col-sm-10">
+                    
+                        <div class="row align-items-center timeline-item">
+                            <div class="col-md-2 order-md-2">
+                                <div class="text-center">
+                                    <img src="/static/img/timeline-item-1.svg" class="timeline-image" alt="Timeline item 1">
+                                </div>
+                            </div>
+                            <div class="col-md-5 order-md-1">
+                                <div class="text-left timeline-description">
+                                    <p>Call for papers <strong>Open</strong></p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 order-md-3">
+                                <div class="text-left timeline-date">
+                                    01 February 2021
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="row align-items-center timeline-item">
+                            <div class="col-md-2 order-md-2">
+                                <div class="text-center">
+                                    <img src="/static/img/timeline-item-2.svg" class="timeline-image" alt="Timeline item 1">
+                                </div>
+                            </div>
+                            <div class="col-md-5 order-md-3">
+                                <div class="text-right timeline-description">
+                                    <p>Call for papers <strong>Close</strong></p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 order-md-1">
+                                <div class="text-right timeline-date">
+                                    28 February 2021
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            
+        </div>
+    </article>
+</section>
+    
     
         <section class="section-container">
     <article class="newsletter">
@@ -255,5 +391,7 @@
         </div>
     </footer>
 </body>
+
+<script src="/static/js/news-modal.js?v=1.0.1"></script>
 
 </html>
