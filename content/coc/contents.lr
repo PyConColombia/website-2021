@@ -1,0 +1,5 @@
+_model: page
+---
+title: coc redirect
+---
+_template: redirect/coc.html
