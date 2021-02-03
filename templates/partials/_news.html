@@ -1,3 +1,9 @@
+{% from "/macros/translation.html" import transbag %}
+
+{%- set t_news_intro = transbag('translate', this.alt, 'news_intro') -%}
+{%- set t_news_description = transbag('translate', this.alt, 'news_description') -%}
+{%- set t_news_end = transbag('translate', this.alt, 'news_end') -%}
+
 <!-- Modal -->
 <div class="modal fade" id="newsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="newsModalLabel" aria-hidden="true">
@@ -18,17 +24,9 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim facilisis gravida neque convallis a cras semper.
-                                Arcu ac tortor dignissim convallis aenean et tortor.
-                            </p>
-                            <p>
-                                Lectus nulla at volutpat diam. Venenatis cras sed felis eget velit
-                                aliquet sagittis id consectetur. Eget mi proin sed libero enim sed faucibus turpis. Sit amet dictum sit amet justo donec
-                                enim diam. Tellus molestie nunc non blandit massa enim. Senectus et netus et malesuada fames ac. Maecenas pharetra
-                                convallis posuere morbi leo. Diam vulputate ut pharetra sit amet aliquam id diam.
-                            </p>
+                            <p>{{t_news_intro}}</p>
+                            <p>{{t_news_description}}</p>
+                            <p>{{t_news_end}}</p>
                         </div>
                     </div>
                 </div>
