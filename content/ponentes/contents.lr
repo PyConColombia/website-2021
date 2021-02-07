@@ -1,0 +1,5 @@
+_model: speakers
+---
+title: Ponentes
+---
+_template: speakers.html
