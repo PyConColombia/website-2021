@@ -16,6 +16,24 @@
     </li>
 {%- endmacro -%}
 
+{%- macro menu_item_list(identifier, items) -%}
+    <li class="nav-item dropdown">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="schedule" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{ transbag('menu', this.alt, identifier) }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="schedule">
+            {%- for item in items -%}
+                {% set item_url = '/' + item %}
+                {% set item_trans_url = item_url|url(alt=this.alt) %}
+                {% set item_this_is_child = this.is_child_of(item_url) %}
+                <a class="dropdown-item {% if item_this_is_child %}active{% endif %}"
+                href="{{ item_trans_url }}">{{ transbag('menu', this.alt, item) }}</a>
+            {%- endfor -%}
+        </div>
+    </li>
+{%- endmacro -%}
+
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -87,7 +105,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     {{ menu_item('recursos') }}
-                    {{ menu_item('cronograma') }}
+                    {{ menu_item_list('cronograma', ['cronograma', 'keynotes', 'ponentes']) }}
                     {{ menu_item('cfp', true) }}
                 </ul>
                 <ul class="navbar-nav">

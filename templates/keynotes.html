@@ -16,15 +16,11 @@
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12">
-                    <div class="content">
-                        {% set speakers = site.query('/keynotes', alt=this.alt).filter(F.keynote).filter(F.publish).order_by('_id') %}
-                        
+                    <div class="content">                        
                         {% if speakers %}
-                            <div class="key-speakers-info">
-                                {% for speaker in speakers %}
-                                    {{ render_keynote_speaker(speaker, index=loop.index, details=True) }}
-                                {%endfor %}
-                            </div>
+                            {% for speaker in speakers %}
+                                {{ render_keynote_speaker(speaker, index=loop.index, details=True) }}
+                            {%endfor %}
                         {% endif %}
                     </div>
                 </div>

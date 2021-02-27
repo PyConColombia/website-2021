@@ -4,33 +4,33 @@
 {%- from "macros/speakers.html" import render_speaker -%}
 
 {%- block body -%}
-    <div class="layout-page">
-        <div class="background-wrapper">
-            <div class="background-image-wrapper">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-12">
-                            <h1 class="title text-center">&lt;{{ this.title }}/&gt; ({{ speakers.count()}})</h1>
-                            {% set speakers = site.query('/ponentes', alt=this.alt).filter(F.publish).order_by('_id') %}
-                            
-                            <div class="key-speakers-info">
-                                
-                                {% for speaker in speakers %}
-                                    {%- if loop.index % 4 == 1 or loop.index % 4 == 3 -%}
-                                        <div class="row">
-                                    {%- endif -%}
-                                        <div class="col-md-6 col-sm-12">
-                                            {{ render_speaker(speaker, index=loop.index, details=True) }}
-                                        </div>
-                                    {%- if loop.index % 4 == 2 or loop.index % 4 == 0 or loop.index == loop.length -%} 
-                                        </div>
-                                    {%- endif -%}
-                                {%endfor %}
-                            </div>
+    <section class="section-container">
+        <article class="body-content">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{ this.title }} ({{ speakers.count()}})</span></h2>
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-12">
+                    <div class="content">
+                        {% for speaker in speakers %}
+                            {%- if loop.index % 4 == 1 or loop.index % 4 == 3 -%}
+                                <div class="row">
+                            {%- endif -%}
+                                <div class="col-md-6 col-sm-12">
+                                    {{ render_speaker(speaker, index=loop.index, details=True) }}
+                                </div>
+                            {%- if loop.index % 4 == 2 or loop.index % 4 == 0 or loop.index == loop.length -%} 
+                                </div>
+                            {%- endif -%}
+                        {%endfor %}
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 {%- endblock -%}
