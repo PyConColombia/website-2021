@@ -13,6 +13,7 @@
 {%- set t_title_cfp = transbag('translate', this.alt, 'title_cfp') -%}
 {%- set t_message_cfp = transbag('translate', this.alt, 'message_cfp') -%}
 {%- set t_button_cfp = transbag('translate', this.alt, 'button_cfp') -%}
+{%- set t_title_keynotes = transbag('translate', this.alt, 'title_keynotes') -%}
 
 {%- block body -%}
     {% if 'news' in this.sections %}
@@ -92,6 +93,37 @@
                 </div>
             </div>
         </section>
+
+        {% set is_keynotes_enabled = 'keynotes' in this.sections %}
+        {% set speakers = site.query('/keynotes', alt=this.alt).filter(F.keynote).filter(F.publish).order_by('_id') %}
+        {%- from "macros/speakers.html" import render_keynote_speaker -%}
+
+        {% if is_keynotes_enabled %}
+            <section class="section-container">
+                <article class="body-content">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-sm-12">
+                            <div class="title-intro">
+                                <img src="{{ base_url }}static/img/title.webp" alt="title">
+                                <div class="intro-container">
+                                    <h2><span>{{ t_title_keynotes }}</span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-sm-12">
+                            <div class="content">
+                                {% if speakers %}
+                                {% for speaker in speakers %}
+                                {{ render_keynote_speaker(speaker, index=loop.index, details=True) }}
+                                {%endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        {% endif %}
+
     </div>
     {% if 'timeline' in this.sections %}
         {% include './partials/_timeline.html' %}

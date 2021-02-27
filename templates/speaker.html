@@ -1,0 +1,118 @@
+{%- set complete_name = this.name + " " + this.last_name -%}
+
+{% extends "layout.html" %}
+{%- from "macros/translation.html" import transbag -%}
+
+{% set title_id = 'keynote' if this.keynote else 'speaker' %}
+{%- set title = transbag('translate', this.alt, title_id) -%}
+
+{% set complete_name = this.name + ' ' + this.last_name %}
+
+{%- block og -%}
+    <meta property="og:title" content="{{ complete_name }} | PyCon Colombia 2021" />
+    <meta property="og:description" content="{{ title }} | PyCon Colombia 2021" />
+    <meta name="twitter:title" content="{{ complete_name }} | PyCon Colombia 2021">
+    <meta name="twitter:description"
+        content="{{ title }} | PyCon Colombia 2021">
+
+    {%- if this.image -%}
+        <meta property="og:image" content="{%- if this.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ this._id }}/{{ this.image }}" />
+        <meta property="og:image:secure_url" content="{%- if this.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ this._id }}/{{ this.image }}" />
+        <meta property="og:image:width" content="1067" />
+        <meta property="og:image:height" content="637" />
+    {%- endif  -%}
+{%- endblock -%} 
+
+{% block title %}
+    <title>{{ complete_name }} | {{ title }} | PyCon Colombia 2021</title>
+{% endblock %}
+
+{%- block body -%}
+    <section class="section-container">
+        <article class="timeline">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{ complete_name }} | {{ title }}</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                    <div class="content speaker">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-sm-12">
+                                <div class="row speaker-info justify-content-center">
+                                    <div class="speaker-avatar col-md-4 col-sm-12">
+                                        <div class="avatar-shadow square">
+                                            <img src={%- if this.image -%} "{%- if this.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ this._id }}/{{ this.image }}"
+                                            {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} " class="img-fluid rounded-circle" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <h4 class="speaker-job">
+                                        {{ this.position_1 }}<br />
+                                        {{ this.position_2 }}
+                                    </h4>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="social-container">
+                                        {% if this.twitter_handle %}
+                                            <a href="https://twitter.com/{{ this.twitter_handle }}" target="_blank">
+                                                <div class="social-icon">
+                                                    <i class="fab fa-twitter fa-2x"></i>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                        {% if this.web %}
+                                            <a href="{{ this.web }}" target="_blank">
+                                                <div class="social-icon">
+                                                    <i class="fas fa-globe fa-2x"></i>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                        {% if this.linkedin_handle %}
+                                            <a href="https://linkedin.com/in/{{ this.linkedin_handle }}" target="_blank">
+                                                <div class="social-icon">
+                                                    <i class="fab fa-linkedin-in fa-2x"></i>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                        {% if this.github_handle %}
+                                            <a href="https://github.com/{{ this.github_handle }}" target="_blank">
+                                                <div class="social-icon">
+                                                    <i class="fab fa-github-alt fa-2x"></i>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if this.information %}
+                            <div class="row justify-content-center align-self-center">
+                                <div class="col-md-10 col-sm-12">
+                                    <div class="speaker-info">
+                                        <p>{{ this.information }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if this.video_code %}
+                            <div class="row justify-content-center align-self-center">
+                                <div class="col-md-10 col-sm-12">
+                                    <div class="video-talk">
+                                        <iframe src="https://www.youtube.com/embed/{{ this.video_code }}" frameborder="0" allowfullscreen class="video">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{%- endblock -%}
