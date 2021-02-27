@@ -16,6 +16,24 @@
     </li>
 {%- endmacro -%}
 
+{%- macro menu_item_list(identifier, items) -%}
+    <li class="nav-item dropdown">
+        <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="schedule" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{ transbag('menu', this.alt, identifier) }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="schedule">
+            {%- for item in items -%}
+                {% set item_url = '/' + item %}
+                {% set item_trans_url = item_url|url(alt=this.alt) %}
+                {% set item_this_is_child = this.is_child_of(item_url) %}
+                <a class="dropdown-item {% if item_this_is_child %}active{% endif %}"
+                href="{{ item_trans_url }}">{{ transbag('menu', this.alt, item) }}</a>
+            {%- endfor -%}
+        </div>
+    </li>
+{%- endmacro -%}
+
 <!doctype html>
 <html class="no-js" lang="{{this.alt}}">
     <head>
@@ -87,7 +105,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     {{ menu_item('recursos') }}
-                    {{ menu_item('cronograma') }}
+                    {{ menu_item_list('cronograma', ['cronograma', 'keynotes', 'ponentes']) }}
                     {{ menu_item('cfp', true) }}
                 </ul>
                 <ul class="navbar-nav">
@@ -120,52 +138,7 @@
 
         {%- block body -%}{%- endblock -%}
         
-        <footer class="section-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                        <div class="social-container">
-                            <a href="https://twitter.com/pyconcolombia" target="_blank">
-                                <div class="social-icon">
-                                    <i class="fab fa-twitter fa-2x"></i>
-                                </div>
-                            </a>
-                            <a href="https://facebook.com/pyconcolombia" target="_blank">
-                                <div class="social-icon">
-                                    <i class="fab fa-facebook-f fa-2x"></i>
-                                </div>
-                            </a>
-                            <a href="https://instagram.com/pyconcolombia" target="_blank">
-                                <div class="social-icon">
-                                    <i class="fab fa-instagram fa-2x"></i>
-                                </div>
-                            </a>
-                            <a href="https://youtube.com/pyconcolombia" target="_blank">
-                                <div class="social-icon">
-                                    <i class="fab fa-youtube fa-2x"></i>
-                                </div>
-                            </a>
-                            <a href="https://github.com/pyconcolombia" target="_blank">
-                                <div class="social-icon">
-                                    <i class="fab fa-github-alt fa-2x"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-                        <p>© 2020 <a href="https://python.org.co" target="blank_">Python Colombia</a>. All rights
-                            reserved.<br><a href="mailto:hello@pycon.co">hello@pycon.co</a></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-1 col-sm-offset-2 col-xs-1 col-xs-offset-2">
-                        <img class="planet-pink hidden-xs" src="{{ base_url }}static/img/planet-orange.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include "./partials/_footer.html" %}
     <script src="{{ base_url }}static/js/news-modal.js?v=1.0.2"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

@@ -1,0 +1,5 @@
+_model: speakers
+---
+title: Oradores Principales
+---
+_template: keynotes.html

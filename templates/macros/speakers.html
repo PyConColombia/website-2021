@@ -1,0 +1,115 @@
+{%- set base_url = '/'|url(alt='es') -%}
+{%- from "macros/translation.html" import transbag -%}
+
+{% macro keynote_left(speaker, index) %}
+{%- set complete_name = speaker.name + " " + speaker.last_name -%}
+    <div class="row speaker-info">
+        <div class="speaker-description col-md-6 col-sm-6 col-xs-12 order-md-1 order-12">
+            <div class="wrapper">
+                <h2><a href="{{ speaker | url }}">{{ speaker.name }} {{ speaker.last_name }}</a></h2>
+                <p>{{ speaker.position_1 }}<br />{{ speaker.position_2 }}</p>
+            </div>
+        </div>
+        <div class="speaker-avatar col-md-4 col-sm-4 col-xs-12 order-md-12 order-1">
+            <div class="avatar-shadow square">
+                <a href="{{ speaker | url }}">
+                    <img src={%- if speaker.image -%} "{%- if speaker.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ speaker._id }}/{{ speaker.image }}"
+                        {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} ">
+                </a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% macro keynote_right(speaker, index) %}
+    {%- set complete_name = speaker.name + " " + speaker.last_name -%}
+    <div class="row speaker-info">
+        <div class="speaker-avatar col-md-4 col-sm-4 col-xs-12 offset-md-2 offset-sm-2">
+            <div class="avatar-shadow square">
+                <a href="{{ speaker | url }}">
+                    <img src={%- if speaker.image -%} "{%- if speaker.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ speaker._id }}/{{ speaker.image }}"
+                        {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} ">
+                </a>
+            </div>
+        </div>
+        <div class="speaker-description alt col-md-6 col-sm-6 col-xs-12">
+            <div class="wrapper">
+                <h2><a href="{{ speaker | url }}">{{ speaker.name }} {{ speaker.last_name }}</a></h2>
+                <p>{{ speaker.position_1 }}<br />{{ speaker.position_2 }}</p>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro speaker_left(speaker, index) %}
+    {%- set complete_name = speaker.name + " " + speaker.last_name -%}
+    <div class="row speaker-info">
+        <div class="speaker-description col-sm-9 col-xs-12 order-md-1 order-12">
+            <div class="wrapper">
+                <h4 class="speaker-title"><a href="{{ speaker | url }}">{{ speaker.name }} {{ speaker.last_name }}</a>
+                </h4>
+                <p>{{ speaker.position_1 }}<br />
+                    {% if speaker.twitter_handle %}
+                    <a href="https://twitter.com/{{ speaker.twitter_handle }}"
+                        target="blank_"><strong>@{{ speaker.twitter_handle }}</strong></a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="speaker-avatar col-sm-3 col-xs-12 order-md-12 order-1">
+            <div class="avatar-shadow square">
+                <a href="{{ speaker | url }}">
+                    <img src={%- if speaker.image -%} "{%- if speaker.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ speaker._id }}/{{ speaker.image }}"
+                        {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} ">
+                </a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% macro speaker_right(speaker, index) %}
+    {%- set complete_name = speaker.name + " " + speaker.last_name -%}
+    <div class="row speaker-info alt">
+        <div class="speaker-avatar col-md-3">
+            <div class="avatar-shadow square">
+                <a href="{{ speaker | url }}">
+                <img src={%- if speaker.image -%} "{%- if speaker.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ speaker._id }}/{{ speaker.image }}"
+                                {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} ">
+                </a>
+            </div>
+        </div>
+        <div class=" speaker-description alt col-md-9">
+            <div class="wrapper">
+                <h4 class="speaker-title"><a href="{{ speaker | url }}">{{ speaker.name }} {{ speaker.last_name }}</a></h4>
+                <p>{{ speaker.position_1 }}<br />
+                    {% if speaker.twitter_handle %}
+                        <a href="https://twitter.com/{{ speaker.twitter_handle }}"
+                        target="blank_"><strong>@{{ speaker.twitter_handle }}</strong></a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro render_keynote_speaker(speaker, index=1, details=True) %}
+    <div class="row justify-content-center align-self-center">
+        {%- if index % 2 == 1 -%}
+            {{ keynote_left(speaker, index) }}
+        {%- else -%}
+            {{ keynote_right(speaker, index) }}
+        {%- endif -%}
+    </div>
+{% endmacro %}
+
+{% macro render_speaker(speaker, index=1, details=True) %}
+    <div class="row justify-content-center align-self-center">
+        {%- if index % 4 == 1 -%}
+        {{ speaker_left(speaker, index) }}
+        {%- elif index % 4 == 2 -%}
+        {{ speaker_left(speaker, index) }}
+        {%- elif index % 4 == 3 -%}
+        {{ speaker_right(speaker, index) }}
+        {%- elif index % 4 == 0 -%}
+        {{ speaker_right(speaker, index) }}
+        {%- endif -%}
+    </div>
+{% endmacro %}

@@ -21,7 +21,7 @@ h1
     width 100%
 
 .title-intro
-    margin 50px auto
+    margin 0px auto 50px auto
     position relative
     img
         width 100%
@@ -55,7 +55,7 @@ h1
             font-size 32px
             font-weight 600
 .planet-pink
-    padding 0 0 150px
+    padding 0 0 50px
     width 100%
 
 
@@ -69,6 +69,7 @@ h1
 
 footer
     .social-container
+        margin-top 50px
         text-align center
         a
             .social-icon
@@ -92,7 +93,7 @@ footer
         color color-text-primary
 
 .timeline
-    margin 150px 0
+    margin 100px 0
     .timeline-item
         .timeline-image
             max-width 100px
@@ -104,6 +105,35 @@ footer
             color color-white
             font-size 40px
             padding-top 20%
+
+.speaker-info
+    margin 20px auto
+    width 100%
+    .speaker-avatar
+        max-width 100%
+        margin-bottom 25px
+        .avatar-shadow
+            webkit-box-shadow 0 0 50px rgba(0, 152, 184,0.9), 0 0 100px #fff
+            box-shadow 0 0 50px rgba(0, 152, 184,0.9), 0 0 100px #fff
+            &.square
+                border-radius 50%
+                height auto
+                overflow hidden
+                margin 0 auto
+                width 80%
+            img
+                width 100%
+    .speaker-description
+        text-align right
+        &.alt
+            text-align left
+        .speaker-title
+            margin-top 0
+
+
+article
+    &.body-content
+        margin 100px 0
 
 .newsletter
     margin 150px 0
@@ -155,6 +185,40 @@ footer
                 width 100%
         p
             color #000
+
+.content
+    &.speaker
+        .speaker-job
+            margin-top 0
+        .social-container
+            margin-bottom 50px
+            text-align center
+            a
+                text-decoration none
+                .social-icon
+                    color color-white
+                    display inline-block
+                    height 40px
+                    margin 0 20px
+                    padding 5px
+                    width 40px
+                    &:hover
+                        transform scale(1.2)
+        .video-talk
+            position relative
+            width 100%
+            height 0
+            margin 3rem 0
+            padding-bottom 56.25%
+
+        .video
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+
+
 
 @media (max-width 991px)
 
@@ -212,7 +276,7 @@ footer
                 font-weight light
     
     .planet-pink
-        padding 0 0 170px
+        padding 0 0 50px
     
     .planet-pink
         opacity 0
