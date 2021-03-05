@@ -70,6 +70,6 @@ Con el fin de crear un ambiente que sea seguro y cómodo para todos nuestros asi
 ---
 _template: cfp.html
 ---
-_hidden: yes
+_hidden: no
 ---
 _discoverable: no
