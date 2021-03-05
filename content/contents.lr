@@ -5,6 +5,6 @@ event
 ---
 _template: index.html
 ---
-sections: timeline, news, newsletter
+sections: timeline, news, newsletter, speakers-call
 ---
 accepted_speakers_link: https://forms.gle/NeoGPiRcVFAJUYqh7
