@@ -2,6 +2,7 @@
 
 {% extends "layout.html" %}
 {%- from "macros/translation.html" import transbag -%}
+{%- from "macros/sponsors.html" import render_sponsors -%}
 
 {%- set t_intro_title_1 = transbag('translate', this.alt, 'intro_title_1') -%}
 {%- set t_intro_title_2 = transbag('translate', this.alt, 'intro_title_2') -%}
@@ -9,6 +10,27 @@
 {%- set t_intro_description_2 = transbag('translate', this.alt, 'intro_description_2') -%}
 {%- set t_intro_description_3 = transbag('translate', this.alt, 'intro_description_3') -%}
 {%- set t_intro_description_4 = transbag('translate', this.alt, 'intro_description_4') -%}
+{%- set t_sponsor_title = transbag('translate', this.alt, 'sponsor_title') -%}
+
+{# Sponsors #}
+{% set venue = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'venue').order_by('_id') %}
+{% set diamond = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'diamond').order_by('_id') %}
+{% set platinum = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'platinum').order_by('_id') %}
+{% set gold = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'gold').order_by('_id') %}
+{% set silver = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'silver').order_by('_id') %}
+{% set bronze = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'bronze').order_by('_id') %}
+{% set startup = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'startup').order_by('_id') %}
+{% set partner = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'partner').order_by('_id') %}
+{% set support = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'support').order_by('_id') %}
 
 {%- set t_title_cfp = transbag('translate', this.alt, 'title_cfp') -%}
 {%- set t_message_cfp = transbag('translate', this.alt, 'message_cfp') -%}
@@ -128,6 +150,47 @@
     {% if 'timeline' in this.sections %}
         {% include './partials/_timeline.html' %}
     {% endif %}
+
+
+    <div class="sponsors">
+        <div class=" wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1.2s" data-wow-offset="-1000">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center col-md-12">
+                        <h1 class="title">&lt;{{ t_sponsor_title }}/&gt;</h1>
+                    </div>
+                </div>
+                {% if venue %}
+                {{ render_sponsors(venue, 8, 5) }}
+                {% endif %}
+                {% if diamond %}
+                {{ render_sponsors(diamond, 7, 4) }}
+                {% endif %}
+                {% if platinum %}
+                {{ render_sponsors(platinum, 6, 3) }}
+                {% endif %}
+                {% if gold %}
+                {{ render_sponsors(gold, 5, 2) }}
+                {% endif %}
+                {% if silver %}
+                {{ render_sponsors(silver, 5, 2) }}
+                {% endif %}
+                {% if bronze %}
+                {{ render_sponsors(bronze, 4, 2) }}
+                {% endif %}
+                {% if startup %}
+                {{ render_sponsors(startup, 4, 2) }}
+                {% endif %}
+                {% if partner %}
+                {{ render_sponsors(partner, 3, 1) }}
+                {% endif %}
+                {% if support %}
+                {{ render_sponsors(support, 3, 1) }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
     {% if 'newsletter' in this.sections %}
         {% include './partials/_newsletter.html' %}
     {% endif %}
