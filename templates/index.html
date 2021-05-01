@@ -2,6 +2,7 @@
 
 {% extends "layout.html" %}
 {%- from "macros/translation.html" import transbag -%}
+{%- from "macros/sponsors.html" import render_sponsors -%}
 
 {%- set t_intro_title_1 = transbag('translate', this.alt, 'intro_title_1') -%}
 {%- set t_intro_title_2 = transbag('translate', this.alt, 'intro_title_2') -%}
@@ -9,6 +10,27 @@
 {%- set t_intro_description_2 = transbag('translate', this.alt, 'intro_description_2') -%}
 {%- set t_intro_description_3 = transbag('translate', this.alt, 'intro_description_3') -%}
 {%- set t_intro_description_4 = transbag('translate', this.alt, 'intro_description_4') -%}
+{%- set t_sponsor_title = transbag('translate', this.alt, 'sponsor_title') -%}
+
+{# Sponsors #}
+{% set venue = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'venue').order_by('_id') %}
+{% set diamond = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'diamond').order_by('_id') %}
+{% set platinum = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'platinum').order_by('_id') %}
+{% set gold = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'gold').order_by('_id') %}
+{% set silver = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'silver').order_by('_id') %}
+{% set bronze = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'bronze').order_by('_id') %}
+{% set startup = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'startup').order_by('_id') %}
+{% set partner = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'partner').order_by('_id') %}
+{% set support = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'support').order_by('_id') %}
 
 {%- set t_title_cfp = transbag('translate', this.alt, 'title_cfp') -%}
 {%- set t_message_cfp = transbag('translate', this.alt, 'message_cfp') -%}
@@ -123,11 +145,54 @@
                 </article>
             </section>
         {% endif %}
-
     </div>
+
     {% if 'timeline' in this.sections %}
         {% include './partials/_timeline.html' %}
     {% endif %}
+
+    <section class="section-container">
+        <article class="sponsors">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="Timeline title">
+                        <div class="intro-container">
+                            <h2><span>{{t_sponsor_title}}</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 col-sm-12">
+                    {% if venue %}
+                        {{ render_sponsors(venue, 8, 5) }}
+                    {% endif %}
+                    {% if diamond %}
+                        {{ render_sponsors(diamond, 7, 4) }}
+                    {% endif %}
+                    {% if platinum %}
+                        {{ render_sponsors(platinum, 6, 3) }}
+                    {% endif %}
+                    {% if gold %}
+                        {{ render_sponsors(gold, 5, 2) }}
+                    {% endif %}
+                    {% if silver %}
+                        {{ render_sponsors(silver, 5, 2) }}
+                    {% endif %}
+                    {% if bronze %}
+                        {{ render_sponsors(bronze, 4, 2) }}
+                    {% endif %}
+                    {% if startup %}
+                        {{ render_sponsors(startup, 4, 2) }}
+                    {% endif %}
+                    {% if partner %}
+                        {{ render_sponsors(partner, 3, 1) }}
+                    {% endif %}
+                    {% if support %}
+                        {{ render_sponsors(support, 3, 1) }}
+                    {% endif %}
+                </div>
+
     {% if 'newsletter' in this.sections %}
         {% include './partials/_newsletter.html' %}
     {% endif %}

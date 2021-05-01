@@ -1,0 +1,61 @@
+{% macro render_sponsors(sponsor_list, size_alt, size_square) %}
+    <div class="row-sponsor">
+        <div class="row">
+            {% for item in sponsor_list %}
+                {% if item.image_alt %}
+                    <div class="col-md-{{size_alt}} col-sm-12 col-xs-12 mx-auto">
+                        <div class="sponsor-ini">
+                            <a href="{{ item | url }}">
+                                <img src="/patrocinadores/{{ item._id }}/{{ item.image_alt }}" />
+                            </a>
+                        </div>
+                    </div>
+                {% elif item.image %}
+                    <div class="col-md-{{size_square}} col-sm-12 col-xs-12 mx-auto">
+                        <div class="sponsor-ini">
+                            <a href="{{ item | url }}">
+                                <img src="/patrocinadores/{{ item._id }}/{{ item.image }}" />
+                            </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="col-md-{{size_alt}} col-sm-12 col-xs-12 mx-auto">
+                        <div class="sponsor-ini">
+                            <h2>{{ item.name }}</h2>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro render_sponsors_web(sponsor_list) %}
+    <div class="col-md-6 col-xs-12">
+        {% for item in sponsor_list %}
+        <div class="row">
+            {% if item.image_alt %}
+                <div class="col-sm-12 mx-auto">
+                    <div class="sponsor-web">
+                        <a href="{{ item | url }}">
+                            <img src="/patrocinadores/{{ item._id }}/{{ item.image_alt }}" />
+                        </a>
+                    </div>
+                </div>
+            {% elif item.image %}
+                <div class="col-sm-4 mx-auto">
+                    <div class="sponsor-web">
+                        <a href="{{ item | url }}">
+                            <img src="/patrocinadores/{{ item._id }}/{{ item.image }}" />
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-sm-12 mx-auto">
+                    <h2>{{ item.name }}</h2>
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
