@@ -1,0 +1,13 @@
+image: profile.jpeg
+---
+information: I'm tiangolo (Sebastián Ramírez), the creator of FastAPI, Typer, and other open source tools.
+---
+keynote: yes
+---
+last_name: Ramirez
+---
+name: Sebastian
+---
+position_1: Creator of FastAPI, Typer and other Open source tools
+---
+publish: yes

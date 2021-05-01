@@ -87,10 +87,20 @@
 
         {% set is_speakers_call_enabled = this.accepted_speakers_link and 'speakers-call' in this.sections %}
         {% set is_speakers_call_section_closed = 'speakers-call' in this.closed_sections %}
+        {% set is_tickets_section_enabled = this.tickets_link and 'tickets' in this.sections %}
 
         <section class="section-container">
             <div class="row">
                 <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <div class="row justify-content-center">
+                        {% if is_tickets_section_enabled %}
+                            <div class="event-ticket col-md-4 {{ 'offset-md-2' if is_speakers_call_enabled else '' }}">
+                                <a id="eventbrite-widget-modal-trigger-150344629835">
+                                    <img src="{% if this.alt == 'en' %} {{ base_url }}static/img/ticket_en.svg {% else %} {{ base_url }}static/img/ticket_es.svg {% endif %}">
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
                     {% if is_speakers_call_enabled %}
                         <div class="event-description call-for-papers {{ 'text-center' if not is_tickets_section_enabled else '' }} col-md-{{ '12' if not is_tickets_section_enabled else '5' }} wow fadeInRight"
                             data-wow-delay="0.6s" data-wow-duration="1.2s" data-wow-offset="-1000">

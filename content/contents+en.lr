@@ -2,4 +2,6 @@ _template: index.html
 ---
 accepted_speakers_link: https://forms.gle/NeoGPiRcVFAJUYqh7
 ---
-sections: timeline, news, newsletter, keynotes
+sections: timeline, news, newsletter, keynotes, tickets
+---
+tickets_link: https://www.eventbrite.com/e/pycon-colombia-2021-tickets-150344629835
