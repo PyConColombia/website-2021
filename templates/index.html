@@ -145,51 +145,53 @@
                 </article>
             </section>
         {% endif %}
-
     </div>
+
     {% if 'timeline' in this.sections %}
         {% include './partials/_timeline.html' %}
     {% endif %}
 
-
-    <div class="sponsors">
-        <div class=" wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="1.2s" data-wow-offset="-1000">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center col-md-12">
-                        <h1 class="title">&lt;{{ t_sponsor_title }}/&gt;</h1>
+    <section class="section-container">
+        <article class="sponsors">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="Timeline title">
+                        <div class="intro-container">
+                            <h2><span>{{t_sponsor_title}}</span></h2>
+                        </div>
                     </div>
                 </div>
-                {% if venue %}
-                {{ render_sponsors(venue, 8, 5) }}
-                {% endif %}
-                {% if diamond %}
-                {{ render_sponsors(diamond, 7, 4) }}
-                {% endif %}
-                {% if platinum %}
-                {{ render_sponsors(platinum, 6, 3) }}
-                {% endif %}
-                {% if gold %}
-                {{ render_sponsors(gold, 5, 2) }}
-                {% endif %}
-                {% if silver %}
-                {{ render_sponsors(silver, 5, 2) }}
-                {% endif %}
-                {% if bronze %}
-                {{ render_sponsors(bronze, 4, 2) }}
-                {% endif %}
-                {% if startup %}
-                {{ render_sponsors(startup, 4, 2) }}
-                {% endif %}
-                {% if partner %}
-                {{ render_sponsors(partner, 3, 1) }}
-                {% endif %}
-                {% if support %}
-                {{ render_sponsors(support, 3, 1) }}
-                {% endif %}
-            </div>
-        </div>
-    </div>
+
+                <div class="col-md-10 col-sm-12">
+                    {% if venue %}
+                        {{ render_sponsors(venue, 8, 5) }}
+                    {% endif %}
+                    {% if diamond %}
+                        {{ render_sponsors(diamond, 7, 4) }}
+                    {% endif %}
+                    {% if platinum %}
+                        {{ render_sponsors(platinum, 6, 3) }}
+                    {% endif %}
+                    {% if gold %}
+                        {{ render_sponsors(gold, 5, 2) }}
+                    {% endif %}
+                    {% if silver %}
+                        {{ render_sponsors(silver, 5, 2) }}
+                    {% endif %}
+                    {% if bronze %}
+                        {{ render_sponsors(bronze, 4, 2) }}
+                    {% endif %}
+                    {% if startup %}
+                        {{ render_sponsors(startup, 4, 2) }}
+                    {% endif %}
+                    {% if partner %}
+                        {{ render_sponsors(partner, 3, 1) }}
+                    {% endif %}
+                    {% if support %}
+                        {{ render_sponsors(support, 3, 1) }}
+                    {% endif %}
+                </div>
 
     {% if 'newsletter' in this.sections %}
         {% include './partials/_newsletter.html' %}
