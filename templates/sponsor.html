@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{%- from "macros/translation.html" import transbag -%}
+
+{% block title %}
+    <title>{{ this.name }} | PyCon Colombia 2021</title>
+{% endblock %}
+
+{%- block og -%}
+    <meta property="og:title" content="{{ this.name }} | PyCon Colombia 2021" />
+    <meta name="twitter:title" content="{{ this.name }} | PyCon Colombia 2021">
+{%- endblock -%} 
+
+{%- block body -%}
+    <section class="section-container">
+        <article class="timeline">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            {% if this.image_alt %}
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 col-sm-12">
+                                        <img src="/patrocinadores/{{ this._id }}/{{ this.image_alt }}" class="title text-center">
+                                    </div>
+                                </div>
+                            {% elif this.image %}
+                                <div class="row justify-content-center">
+                                    <div class="col-md-3 col-sm-12">
+                                        <img src="/patrocinadores/{{ this._id }}/{{ this.image }}" class="title text-center">
+                                    </div>
+                                </div>
+                            {% else %}
+                                <h2><span>{{ this.name }}</span></h2>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                    <div class="content speaker">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-sm-12">
+                                <div class="row justify-content-center">
+                                    <div class="social-container">
+                                        {% if this.twitter_handle %}
+                                            <a href="https://twitter.com/{{ this.twitter_handle }}" target="_blank">
+                                                <div class="social-icon">
+                                                    <i class="fab fa-twitter fa-2x"></i>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                        {% if this.facebook_handle %}
+                                            <a href="https://facebook.com/{{ this.facebook_handle }}" target="_blank">
+                                                <div class="social-icon">
+                                                    <i class="fab fa-facebook-f fa-2x"></i>
+                                                </div>
+                                            </a>
+                                        {% endif %}
+                                        {% if this.linkedin_handle %}
+                                        <a href="https://linkedin.com/company/{{ this.linkedin_handle }}" target="_blank">
+                                            <div class="social-icon">
+                                                <i class="fab fa-linkedin-in fa-2x"></i>
+                                            </div>
+                                        </a>
+                                        {% endif %}
+                                        {% if this.github_handle %}
+                                        <a href="https://github.com/{{ this.github_handle }}" target="_blank">
+                                            <div class="social-icon">
+                                                <i class="fab fa-github-alt fa-2x"></i>
+                                            </div>
+                                        </a>
+                                        {% endif %}
+                                        {% if this.web %}
+                                        <a href="{{ this.web }}" target="_blank">
+                                            <div class="social-icon">
+                                                <i class="fas fa-globe fa-2x"></i>
+                                            </div>
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% if this.summary %}
+                            <div class="row justify-content-center align-self-center">
+                                <div class="col-md-10 col-sm-12">
+                                    <div class="speaker-info">
+                                        <p>{{ this.summary }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if this.information %}
+                            <hr />
+                            <div class="row justify-content-center align-self-center">
+                                <div class="col-md-10 col-sm-12">
+                                    <div class="speaker-info">
+                                        <p>{{ this.information }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{%- endblock -%}

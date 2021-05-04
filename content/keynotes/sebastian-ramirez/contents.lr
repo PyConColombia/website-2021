@@ -1,12 +1,12 @@
 name: Sebastian
 ---
-information: I'm tiangolo (Sebastián Ramírez), the creator of FastAPI, Typer, and other open source tools.
+information: Soy tiangolo (Sebastián Ramírez), el creador de FastAPI,Typer, y otras herramientas de código abierto.
 ---
 keynote: yes
 ---
 last_name: Ramirez
 ---
-position_1: Creator of FastAPI, Typer and other open source tools
+position_1: Creador de FastAPI, Typer y otras herramientas Open source
 ---
 image: profile.jpeg
 ---

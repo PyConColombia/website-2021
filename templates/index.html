@@ -2,6 +2,7 @@
 
 {% extends "layout.html" %}
 {%- from "macros/translation.html" import transbag -%}
+{%- from "macros/sponsors.html" import render_sponsors -%}
 
 {%- set t_intro_title_1 = transbag('translate', this.alt, 'intro_title_1') -%}
 {%- set t_intro_title_2 = transbag('translate', this.alt, 'intro_title_2') -%}
@@ -9,6 +10,27 @@
 {%- set t_intro_description_2 = transbag('translate', this.alt, 'intro_description_2') -%}
 {%- set t_intro_description_3 = transbag('translate', this.alt, 'intro_description_3') -%}
 {%- set t_intro_description_4 = transbag('translate', this.alt, 'intro_description_4') -%}
+{%- set t_sponsor_title = transbag('translate', this.alt, 'sponsor_title') -%}
+
+{# Sponsors #}
+{% set venue = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'venue').order_by('_id') %}
+{% set diamond = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'diamond').order_by('_id') %}
+{% set platinum = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'platinum').order_by('_id') %}
+{% set gold = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'gold').order_by('_id') %}
+{% set silver = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'silver').order_by('_id') %}
+{% set bronze = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'bronze').order_by('_id') %}
+{% set startup = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'startup').order_by('_id') %}
+{% set partner = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'partner').order_by('_id') %}
+{% set support = site.query('/patrocinadores', alt=this.alt).filter(F.confirmed).filter(F.category ==
+'support').order_by('_id') %}
 
 {%- set t_title_cfp = transbag('translate', this.alt, 'title_cfp') -%}
 {%- set t_message_cfp = transbag('translate', this.alt, 'message_cfp') -%}
@@ -65,10 +87,20 @@
 
         {% set is_speakers_call_enabled = this.accepted_speakers_link and 'speakers-call' in this.sections %}
         {% set is_speakers_call_section_closed = 'speakers-call' in this.closed_sections %}
+        {% set is_tickets_section_enabled = this.tickets_link and 'tickets' in this.sections %}
 
         <section class="section-container">
             <div class="row">
                 <div class="col-sm-12 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <div class="row justify-content-center">
+                        {% if is_tickets_section_enabled %}
+                            <div class="event-ticket col-md-4 {{ 'offset-md-2' if is_speakers_call_enabled else '' }}">
+                                <a id="eventbrite-widget-modal-trigger-150344629835">
+                                    <img src="{% if this.alt == 'en' %} {{ base_url }}static/img/ticket_en.svg {% else %} {{ base_url }}static/img/ticket_es.svg {% endif %}">
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
                     {% if is_speakers_call_enabled %}
                         <div class="event-description call-for-papers {{ 'text-center' if not is_tickets_section_enabled else '' }} col-md-{{ '12' if not is_tickets_section_enabled else '5' }} wow fadeInRight"
                             data-wow-delay="0.6s" data-wow-duration="1.2s" data-wow-offset="-1000">
@@ -123,11 +155,54 @@
                 </article>
             </section>
         {% endif %}
-
     </div>
+
     {% if 'timeline' in this.sections %}
         {% include './partials/_timeline.html' %}
     {% endif %}
+
+    <section class="section-container">
+        <article class="sponsors">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="Timeline title">
+                        <div class="intro-container">
+                            <h2><span>{{t_sponsor_title}}</span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 col-sm-12">
+                    {% if venue %}
+                        {{ render_sponsors(venue, 8, 5) }}
+                    {% endif %}
+                    {% if diamond %}
+                        {{ render_sponsors(diamond, 7, 4) }}
+                    {% endif %}
+                    {% if platinum %}
+                        {{ render_sponsors(platinum, 6, 3) }}
+                    {% endif %}
+                    {% if gold %}
+                        {{ render_sponsors(gold, 5, 2) }}
+                    {% endif %}
+                    {% if silver %}
+                        {{ render_sponsors(silver, 5, 2) }}
+                    {% endif %}
+                    {% if bronze %}
+                        {{ render_sponsors(bronze, 4, 2) }}
+                    {% endif %}
+                    {% if startup %}
+                        {{ render_sponsors(startup, 4, 2) }}
+                    {% endif %}
+                    {% if partner %}
+                        {{ render_sponsors(partner, 3, 1) }}
+                    {% endif %}
+                    {% if support %}
+                        {{ render_sponsors(support, 3, 1) }}
+                    {% endif %}
+                </div>
+
     {% if 'newsletter' in this.sections %}
         {% include './partials/_newsletter.html' %}
     {% endif %}
