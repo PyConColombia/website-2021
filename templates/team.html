@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{%- from "macros/translation.html" import transbag -%}
+{%- from "macros/members.html" import render_team -%}
+
+{%- block body -%}
+    <section class="section-container">
+        <article class="body-content">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{ this.title }}</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                    <div class="content">
+                        {% for name, categories in [['Organizers', ['Organizer', 'Co-Organizer']], ['Collaborators', ['Collaborator']], ['Volunteers', ['Volunteer']]] %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    {%- set title = transbag('translate', this.alt, name) -%}
+                                    
+                                    <h2 class="category-title">{{ title }}</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    {% for category in categories %}
+                                        {% set members = site.query('/equipo', alt=this.alt).filter(F.category==category).filter(F.publish).order_by('sort_key') %}
+                                        {% for member in members %}
+                                            {%- if loop.index % 4 == 1 or loop.index % 4 == 3 -%}
+                                                <div class="row">
+                                            {%- endif -%}
+                                                <div class="col-md-6 col-sm-12">
+                                                    {{ render_team(member, index=loop.index, details=True) }}
+                                                </div>
+                                            {%- if loop.index % 4 == 2 or loop.index % 4 == 0 or loop.index == loop.length -%}
+                                            </div>
+                                            {%- endif -%}
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{%- endblock -%}
