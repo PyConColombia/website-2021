@@ -2,13 +2,13 @@ category: Organizer
 ---
 facebook_handle: karobotco
 ---
-github_handle: KaroLadino
+github_handle: karobotco
 ---
 image: karobot.jpeg
 ---
 last_name: Ladino
 ---
-linkedin_handle: karobot
+linkedin_handle: karobotco
 ---
 name: Karolina
 ---
@@ -19,3 +19,5 @@ responsibility: Speakers and Event Logistics
 twitter_handle: karobotco
 ---
 web: https://karobot.co
+---
+sort_key: 2
