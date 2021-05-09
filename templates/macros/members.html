@@ -1,0 +1,70 @@
+{% macro team_member_left(team_member, index) %}
+
+{%- set base_url = '/'|url(alt='es') -%}
+{%- set complete_name = team_member.name + " " + team_member.last_name -%}
+
+<div class="row speaker-info wow fadeInLeft" data-wow-delay="0.6s" data-wow-duration="1.2s" data-wow-offset="-1000">
+    <div class="speaker-description col-sm-8 col-xs-12 order-md-1 order-12">
+        <div class="wrapper">
+            <a href="{{ team_member|url }}">
+                <h3 class="speaker-title">{{ team_member.name }} {{ team_member.last_name }}</h3>
+            </a>
+            <p>{{ team_member.responsibility }}<br />
+                {% if team_member.twitter_handle %}
+                <a href="https://twitter.com/{{ team_member.twitter_handle }}"
+                    target="blank_"><strong>@{{ team_member.twitter_handle }}</strong></a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    <div class="speaker-avatar col-sm-4 col-xs-12 order-md-12 order-1">
+        <div class="avatar-shadow square">
+            <a href="{{ team_member|url }}">
+                <img src={%- if team_member.image -%} "/equipo/{{ team_member._id }}/{{ team_member.image }}"
+                    {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} " />
+            </a>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+{% macro team_member_right(team_member, index) %}
+{%- set complete_name = team_member.name + " " + team_member.last_name -%}
+    <div class=" row speaker-info alt wow fadeInRight" data-wow-delay="0.6s" data-wow-duration="1.2s"
+            data-wow-offset="-1000">
+        <div class="speaker-avatar col-sm-4 col-xs-12">
+            <div class="avatar-shadow square">
+                <a href="{{ team_member|url }}">
+                    <img src={%- if team_member.image -%} "/equipo/{{ team_member._id }}/{{ team_member.image }}"
+                    {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} " />
+                </a>
+            </div>
+        </div>
+        <div class="speaker-description col-sm-8 col-xs-12">
+            <div class="wrapper">
+                <a href="{{ team_member|url }}">
+                    <h3 class="speaker-title">{{ team_member.name }} {{ team_member.last_name }}</h3>
+                </a>
+                <p>{{ team_member.responsibility }}<br />
+                    {% if team_member.twitter_handle %}
+                    <a href="https://twitter.com/{{ team_member.twitter_handle }}"
+                        target="blank_"><strong>@{{ team_member.twitter_handle }}</strong></a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro render_team(team_member, index=1, details=True) %}
+    <div class="row justify-content-center align-self-center">
+        {%- if index % 4 == 1 -%}
+            {{ team_member_left(team_member, index) }}
+        {%- elif index % 4 == 2 -%}
+            {{ team_member_left(team_member, index) }}
+        {%- elif index % 4 == 3 -%}
+            {{ team_member_right(team_member, index) }}
+        {%- elif index % 4 == 0 -%}
+            {{ team_member_right(team_member, index) }}
+        {%- endif -%}
+    </div>
+{% endmacro %}
