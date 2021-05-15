@@ -1,6 +1,6 @@
 name: Behave yourself! A better way to do testing
 ---
-authors: kevin-jose-hernandez-gonzalez-
+authors: kevin-jose-hernandez-gonzalez
 ---
 description: El testing es parte fundamental del desarrollo de software moderno, no solo para confirmar el comportamiento del código escrito, sino para conseguir casos que no estaban contemplados (edge cases). Esta charla describe en que consisten los tests de comportamiento (behave tests) con Python, las ventajas de hacer tests de este tipo frente a tests unitarios, las diferencias fundamentales frente a los tests unitarios y en que casos se deberían emplear y en que casos no.
 

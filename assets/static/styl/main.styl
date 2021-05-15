@@ -224,13 +224,17 @@ article
 
 .event-ticket
     cursor pointer
-    padding 15px 0
+    padding 30px 0
 
-    &:hover
-        -webkit-animation-duration 0.5s
-        animation-duration 0.5s
-        -webkit-animation-name shake
-        animation-name shake
+    img
+        -webkit-transition: all 4s;
+        -moz-transition: all 4s;
+
+        &:hover
+            -webkit-animation-duration 0.5s
+            animation-duration 0.5s
+            -webkit-animation-name shake
+            animation-name shake
 
 @media (max-width 991px)
 
