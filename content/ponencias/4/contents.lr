@@ -1,0 +1,18 @@
+name: Functional Programming inside OOP? It’s possible with Python
+---
+authors: carlos-antonio-villavicencio-moreira
+---
+description: It is well known that Python 3 is an object-oriented language. But if we look back at the roots of the language, functions as first class objects were part of the initial design. Recently, functional programming has gained considerable popularity because it is robust, concise, and easier to test. But that set of benefits are not only reserved for functional pure programming languages such as Haskell.
+
+In this talk, I will run into a series of concepts, such as shared state, pure functions, side effects, and some other functional programming lingo that will help us understand how to use some not well-known Python features influenced by functional principles. We'll see how to implement our functional patterns in the code we write every day. In the end, you will see why this paradigm is relevant right now and why most of the existing languages and libraries actually evolved and keep going in that direction.
+
+---
+language: en
+---
+summary: 
+---
+topic: Other
+---
+type: talk
+---
+    

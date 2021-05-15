@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12">
-                    <div class="content">                        
+                    <div class="content">
                         {% if speakers %}
                             {% for speaker in speakers %}
                                 {{ render_keynote_speaker(speaker, index=loop.index, details=True) }}

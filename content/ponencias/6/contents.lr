@@ -1,0 +1,26 @@
+name: Multilingual Natural Language Processing using Python
+---
+authors: gajendra-deshpande
+---
+description: Natural Language Processing(NLP) is an interesting and challenging field. It becomes even more interesting and challenging when we take into consideration more than one human language. when we perform an NLP on a single language there is a possibility that the interesting insights from another human language might be missed out. The interesting and valuable information may be available in other human languages such as Spanish, Chinese, French, Hindi, and other major languages of the world. Also, the information may be available in various formats such as text, images, audio, and video.
+
+In this talk, I will discuss techniques and methods that will help perform NLP tasks on multi-source and multilingual information. The talk begins with an introduction to natural language processing and its concepts. Then it addresses the challenges with respect to multilingual and multi-source NLP. Next, I will discuss various techniques and tools to extract information from audio, video, images, and other types of files using PyScreenshot, SpeechRecognition, Beautiful Soup, and PIL packages. Also, extracting the information from web pages and source code using pytessaract. Next, I will discuss concepts such as translation and transliteration that help to bring the information into a common language format. Once the language is in a common language format it becomes easy to perform NLP tasks. Next, I will explain with the help of code walkthrough generating a summary from multi-source and multi lingual information into a specific language using spacy and stanza packages.
+
+Outline
+1. Introduction to NLP and concepts (05 Minutes)
+2. Challenges in Multi source multilingual NLP (02 Minutes)
+3. Tools for extracting information from various file formats (03 Minutes)
+4. Extract information from web pages and source code (03 Minutes)
+5. Methods to convert information into common language format (03 Minutes)
+6. Code walkthrough for multi source and multi lingual summary generation (07 Minutes)
+7. Conclusion and Questions (02 Minutes)
+---
+language: en
+---
+summary: 
+---
+topic: Other, Machine Learning
+---
+type: talk
+---
+    

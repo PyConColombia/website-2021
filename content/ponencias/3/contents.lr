@@ -1,0 +1,28 @@
+name: Optimization problems in Python using Pyomo: An introduction
+---
+authors: camilo-velasquez
+---
+description: The talk will be about Pyomo, which is an open-source framework for optimization modeling using Python.
+
+Optimization problems are present in multiple industries. The simple problems or linear programming problems are solved using Excel Solver. On the other hand, the complex ones are usually solved with expensive software like Xpress or Matlab or with optimizers that are hard to use.
+
+Pyomo is an object-oriented framework that can use commercial or open-source solvers. It supports a wide range of problem types like Linear Programming, Non-linear programming, Mixed-integer programming, Stochastic Programming, and much more. It is also a great tool to formulate and analyze those optimization models.
+
+The talk will be a walkthrough over 3 different optimization problems using Pyomo:
+As an introduction to Pyomo and its syntax, a simple linear programming optimization problem applicable to multiple industries, involving cost, profit and resource allocation.
+A non-linear optimization problem to estimate key epidemiological parameters on a disease outbreak, with a simple and common epidemiological model.
+Using pyomo to solve sudokus, getting feasibility and all the possible solutions from a given state.
+Optional. Adequate job scheduling to improve specific KPIs
+This will be a Pythonic way of solving optimization problems, combining libraries such as Pandas, Numpy and Pyomo.
+
+A reproducible open-source notebook will be available after the talk
+---
+language: en
+---
+summary: 
+---
+topic: Other, Scientific Computing
+---
+type: talk
+---
+    

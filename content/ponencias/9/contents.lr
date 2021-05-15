@@ -1,0 +1,27 @@
+name: Using Python to start learning Unconstrained Numerical Optimization Algorithms
+---
+authors: indranil-ghosh
+---
+description: The talk will start with important prerequisites that need to be developed before starting with serious numerical optimization algorithms. Concepts like "a solution", "minimization/maximization", "scaling", "objective function", "gradient and Hessian" and so on will be introduced. This first section will take around 7 mins.
+
+Next, we will explore unconstrained optimization techniques and discuss a few elementary mathematical techniques before diving into discussing how to solve one-dimensional optimization problems using algorithms called Newton’s method, Secant Method, etc., and implement them using Python. This section will consume around 10 mins.
+
+In the final 13 minutes of the talk, I will briefly talk about "Line Search Descent Methods" for solving unconstrained optimization problems. Methods like "steepest descent algorithm"  will be discussed in detail along with Python implementation before ending the presentation with brief overviews on "Marquardt algorithm", "Conjugate gradient method" and "Quasi Newton method" along with their implementations.  
+
+ The Python packages that will be us2d are : 
+1. numpy,
+2. scipy, 
+3. autograd, and 
+4. matplotlib.
+
+I believe this talk will help upper-level undergraduate and graduate students in Computer Science, Applied Mathematics, and other related fields, start exploring the field of numerical optimization hands-on. The audience is expected to have an undergraduate-level understanding of linear algebra, besides having an introductory working knowledge of Python/similar scripting languages and usage/implementation of Python packages.
+---
+language: en
+---
+summary: 
+---
+topic: Other, Scientific Computing
+---
+type: talk
+---
+    

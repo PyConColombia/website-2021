@@ -1,0 +1,26 @@
+name: Python + Psicología: Experiencias de aplicaciones de Machine Learning en Investigación Social.
+---
+authors: alexis-enrique-carrillo-ramirez
+---
+description:
+
+Las aplicaciones de Python en investigación científica son bien conocidas en las ramas de las ciencias "duras": bioinformática, geociencias, mecánica cuántica, astrofísica, por mencionar algunas. Sin embargo, en ciencias sociales y en especial en Psicología, ha sido poco explorado el potencial de Python para impulsar nuevos descubrimientos. Es por ello que el objetivo de esta presentación es dar a conocer el uso de Python en dos proyectos de investigación en Psicología: 
+1. Análisis de discurso político a partir de mensajes publicados en Twitter. Desarrollado por el Observatorio de Redes Sociales Digitales para Estudios en Psicología (Facultad de Psicología, Universidad Católica de Colombia).
+2. Efectividad de los algoritmos de calificación automática, según el proceso cognitivo evaluado y el parámetro de dificultad, en preguntas abiertas de respuesta corta. Tesis de Maestría en Psicología (Facultad de Psicología, Universidad Católica de Colombia).
+
+En el primer caso, Python se utiliza en la minería de datos:
+- Descarga y procesamiento de los datos: Conectándonos a la API de Twitter vía Tweepy y transformando los datos en Pandas.
+- Procesamiento de Lenguaje Natural: Preprocesamiento de texto, "Feature engineering", y "embeddings" con el enfoque "Bolsa de palabras". 
+Las tablas de salida son el insumo para los diferentes análisis: lexicográficos, pruebas estadísticas y grafos, entre otros.
+
+El segundo caso, se entrenaron 6 algoritmos de Machine Learning (KNN, RBF-SVM, Random Forest, AdaBoost, Naïve Bayes y QDA) en una tarea de clasificación de texto, en donde las respuestas a una prueba de conocimiento en formato de preguntas abiertas con respuesta corta se calificaban como respuesta correcta o incorrecta. El desempeño de los clasificadores, medido con el índice F1, se relacionó con las propiedades psicométricas de las preguntas y con los procesos cognitivos evaluados. Tanto el preprocesamiento como el entrenamiento de los algoritmos se realizó en Python.
+
+Estos dos proyectos han encontrado en Python una herramienta determinante para el desarrollo de las investigaciones, demostrando el gran potencial que puede tener en las diferentes ramas de la investigación social. 
+---
+language: es
+---
+summary: 
+---
+topic: Other, Machine Learning
+---
+type: talk

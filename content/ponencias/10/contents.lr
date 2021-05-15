@@ -1,0 +1,19 @@
+name: Restauración de imágenes multiespectrales con GAN: generar imágenes nuevas para parchar las corruptas
+---
+authors: maria-jose-meneses-villota
+---
+description: Las imágenes multiespectrales contienen una gran cantidad de información útil para diversas aplicaciones y análisis posteriores. Sin embargo, la captura y digitalización de este tipo de imágenes puede presentar pérdidas de información. Por ello se propone un método de restauración a partir de Redes Generativas Adversarias (Generative Adversarial Networks, GANs) 
+Este proceso es un método de aprendizaje no supervisado y es capaz de generar resultados visualmente aceptables a través del procesamiento de imágenes multiespectrales con corrupciones de tamaño y ubicación aleatoria. 
+En esta charla se contextualiza en imágenes multiespectrales y GAN (10min), presenta el proceso de entrenamiento realizado en Python, con la librería Pytorch(10min), así como los resultados de restauración obtenidos (6min) y, por último, se motiva a los asistentes a desarrollar proyectos en este tema y se expone agradecimientos (3min) 
+Las GAN fueron presentadas en 2014 y desde entonces se han generado gran cantidad de desarrollos en diversas áreas; si aplicamos este poderoso método al procesamiento de imágenes multiespectrales se logra una potente combinación para estudios y desarrollos en temas relacionados a la agricultura, minería, arte, medicina, entre otros. Lo mejor es que Python nos permite conformar este procesamiento y obtener resultados de una manera eficiente y sencillo de comprender y replicar, sumado a esto su comunidad facilita la distribución de conocimiento y apoyo que en conjunto contribuyen en gran medida al avance de los desarrollos y aplicaciones.
+
+---
+language: es
+---
+summary: 
+---
+topic: Other, Computer Vision, Machine Learning
+---
+type: talk
+---
+    

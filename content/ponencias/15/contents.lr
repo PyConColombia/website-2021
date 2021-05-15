@@ -1,0 +1,19 @@
+name: Behave yourself! A better way to do testing
+---
+authors: kevin-jose-hernandez-gonzalez-
+---
+description: El testing es parte fundamental del desarrollo de software moderno, no solo para confirmar el comportamiento del código escrito, sino para conseguir casos que no estaban contemplados (edge cases). Esta charla describe en que consisten los tests de comportamiento (behave tests) con Python, las ventajas de hacer tests de este tipo frente a tests unitarios, las diferencias fundamentales frente a los tests unitarios y en que casos se deberían emplear y en que casos no.
+
+Lo mas importante de hacer pruebas es hacerlas de manera regular, una base de código grande que no tenga pruebas solo va a generar problemas en el futuro, la filosofía de los tests de comportamiento es fomentar la colaboración entre desarrolladores, control de calidad y participantes no técnicos o empresariales en un proyecto de software, permitiendo así aumentar la regularidad y calidad de las pruebas.
+
+El desarrollo guiado por comportamiento (BDD) extiende al desarrollo guiado por pruebas (TDD) al escribir casos de prueba en un lenguaje natural que cualquiera puede leer, por esta razón permiten describir casos que con pruebas unitarias serian difíciles de escribir. Para ilustrar estas ventajas y principales diferencias de los tests de comportamiento frente a los tests unitarios re-escribiré una serie de pruebas unitarias empleando esta técnica. 🚀
+---
+language: es
+---
+summary: 
+---
+topic: Other
+---
+type: talk
+---
+    

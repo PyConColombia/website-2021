@@ -1,0 +1,15 @@
+name: Using Python to listen to your heart. 
+---
+authors: lorena-aldana-blanco
+---
+description: Briefly explained, sonification means to transform data into sound with the purpose of conveying information. In this talk, I will explain how sonification could serve as a supporting tool for cardiac diagnosis and monitoring, and how you could use Python to create sonifications from electrocardiogram (ECG) data. 
+---
+language: es
+---
+summary: 
+---
+topic: Other
+---
+type: talk
+---
+    

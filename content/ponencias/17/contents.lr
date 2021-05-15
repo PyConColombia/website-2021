@@ -1,0 +1,15 @@
+name: Descubriendo la magia de las bases de datos basadas en grafos con neo4j y python
+---
+authors: juan-guillermo-gomez-torres
+---
+description: La era de los datos llegó con todo y nos enfrentamos a tareas de modelado, manipulación y consulta de millones de datos para agregar valor a nuestros usuarios y empresas. Han surgido muchas técnicas, paradigmas, procesos y herramientas para hacerlo. Una de ellas los grafos, aunque existen hace muchos años atrás, ahora podemos modelar y manipular nuestros datos en un grafo obteniendo grandes beneficios de rendimiento, facilidad de entendimiento, crear recomendaciones y otras cosas más. En esta charla profundizaremos en el modelado, herramientas, uso y capacidades de las bases de datos basadas en grafos con neo4j y python.
+---
+language: es
+---
+summary: 
+---
+topic: Other
+---
+type: talk
+---
+    

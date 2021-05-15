@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{%- from "macros/translation.html" import transbag -%}
+{%- from "macros/talks.html" import render_talk -%}
+
+{% set talks = site.query('/ponencias', alt=this.alt).filter(F.type == 'talk').order_by('name') %}
+{%- set t_talks = transbag('translate', this.alt, 'title_talks') -%}
+
+{%- block body -%}
+    <section class="section-container">
+        <article class="timeline">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{t_talks}} ({{ talks.count()}})</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                    <div class="content">
+                        {% if talks %}
+                            {% for talk in talks %}
+                                {%- if loop.index % 4 == 1 or loop.index % 4 == 3 -%}
+                                    <div class="row">
+                                {%- endif -%}
+                                <div class="col-md-6 col-sm-12">
+                                    {{ render_talk(talk) }}
+                                </div>
+                                {%- if loop.index % 4 == 2 or loop.index % 4 == 0 or loop.index == loop.length -%}
+                                    </div>
+                                {%- endif -%}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{%- endblock -%}

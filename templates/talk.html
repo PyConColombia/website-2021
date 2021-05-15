@@ -1,0 +1,151 @@
+{% extends "layout.html" %}
+{%- from "macros/translation.html" import transbag -%}
+
+{%- set t_talks = transbag('translate', this.alt, 'title_talks') -%}
+{%- set t_workshops = transbag('translate', this.alt, 'title_workshops') -%}
+{% set title = t_talks if this.type == 'talk' else t_workshops %}
+{%- set st_authors = transbag('translate', this.alt, 'subtitle_authors') -%}
+{%- set st_date = transbag('translate', this.alt, 'subtitle_date') -%}
+{%- set st_summary = transbag('translate', this.alt, 'subtitle_summary') -%}
+{%- set st_resources = transbag('translate', this.alt, 'subtitle_resources') -%}
+{%- set st_about_talk = transbag('translate', this.alt, 'subtitle_about_talk') -%}
+{%- set t_slides = transbag('translate', this.alt, 'subtitle_slides') -%}
+
+{%- block og -%}
+    <meta property="og:title" content="{{ this.name }} | PyCon Colombia 2021" />
+    <meta property="og:description" content="{{ this.description|striptags }}" />
+    <meta name="twitter:title" content="{{ this.name }} | PyCon Colombia 2021">
+    <meta name="twitter:description" content="{{ this.description|striptags }}">
+    <meta property="og:image" content="{{ l_opimage }}" />
+    <meta property="og:image:secure_url" content="{{ l_opimage }}" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+
+{%- endblock -%}
+
+{% block title %}
+    <title>{{ this.name }} | {{ title }} | PyCon Colombia 2021</title>
+{% endblock %}
+
+{%- block body -%}
+    <section class="section-container">
+        <article class="timeline">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{ title }}</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-12">
+                    <div class="content speaker">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12">
+
+                                <h2>{{ this.name }} ({{ transbag('translate', 'es', this.language) }})</h2>
+                                <div class="row">
+                                    <div class="tags">
+                                        <ul>
+                                            {%- for tag in this.topic -%}
+                                            <li class="{{ tag }} tag">{{ tag }}</li>
+                                            {%- endfor -%}
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% if this.video_code %}
+                                    <div class="row justify-content-center align-self-center">
+                                        <div class="video-talk">
+                                        <iframe src="https://www.youtube.com/embed/{{ this.video_code }}" frameborder="0" allowfullscreen class="video">
+                                        </iframe>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if this.authors %}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3>{{ st_authors }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                {%- for author in this.authors -%}
+                                                    {%- set current_author = site.get('/ponentes/'+ author, alt='es') -%}
+                                                    <div class="col-md-2 col-3">
+                                                        <div class="speaker-avatar-talks">
+                                                            <div class="avatar-shadow square">
+                                                                <a href="{{ current_author | url }}">
+                                                                    <img
+                                                                    src={%- if current_author.image -%} "{%- if current_author.keynote -%}/keynotes/{%- else -%}/ponentes/{%- endif -%}{{ current_author._id }}/{{ current_author.image }}"
+                                                                    {%- else -%} "{{ base_url }}static/img/empty-photo.svg" {%- endif -%} ">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {%- endfor -%}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {%- if this.datetime -%}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3>{{ st_date }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            {%- set t_day = transbag('translate', this.alt, this.datetime.strftime('%A')) -%}
+                                        </div>
+                                        <p>{{ t_day }} {{ this.datetime.strftime("%d, %H:%M") }}</p>
+                                    </div>
+                                {%- endif -%}
+                                {%- if this.summary -%}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3>{{ st_summary }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            {{ this.summary }}
+                                        </div>
+                                    </div>
+                                {%- endif -%}
+                                {%- if this.description -%}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3>{{ st_about_talk }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            {{ this.description }}
+                                        </div>
+                                    </div>
+                                {%- endif -%}
+                                {%- if this.url or this.file -%}
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3>{{ st_resources }}</h3>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        {% if this.file %}
+                                            <li><a class="link" href="{{- this.file | url(alt='es') -}}">{{ t_slides }}</a></li>
+                                        {% endif %}
+                                        {%- if this.url -%}
+                                            <li><a href="{{ this.url }}" target="blank_">{{ this.url }}</a></li>
+                                        {%- endif -%}
+                                    </ul>
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+{%- endblock -%}

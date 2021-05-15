@@ -1,0 +1,14 @@
+name: Build a serverless API in AWS in minutes: Boosting your stack with Chalice and CDK
+---
+authors: juan-david-alzate-cardona
+---
+description: Imagine you need to write an serverless application, which includes a restful API, databases and authentication. You decide to host your application in AWS because you know AWS is great. However, you do not like to write cloud formation because you spend a lot of time in it. Here is your solution. In this lecture, we are going to learn about CDK (Cloud Development Kit) and Chalice (a python framework) to build a serverless API (a basic one) in minutes.
+---
+language: es
+---
+summary: 
+---
+topic: Community, Other, Web
+---
+type: talk
+---
