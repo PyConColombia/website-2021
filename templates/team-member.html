@@ -7,11 +7,11 @@
 {%- set title = transbag('translate', this.alt, 'team') -%}
 
 {%- block og -%}
-    <meta property="og:title" content="{{ complete_name }} | PyCon Colombia 2020" />
-    <meta property="og:description" content="{{ title }} | PyCon Colombia 2020" />
-    <meta name="twitter:title" content="{{ complete_name }} | PyCon Colombia 2020">
+    <meta property="og:title" content="{{ complete_name }} | PyCon Colombia 2021" />
+    <meta property="og:description" content="{{ title }} | PyCon Colombia 2021" />
+    <meta name="twitter:title" content="{{ complete_name }} | PyCon Colombia 2021">
     <meta name="twitter:description"
-        content="{{ title }} | PyCon Colombia 2020">
+        content="{{ title }} | PyCon Colombia 2021">
 
     {%- if this.image -%}
         <meta property="og:image" content="/equipo/{{ this._id }}/{{ this.image }}" />
@@ -22,7 +22,7 @@
 {%- endblock -%} 
 
 {% block title %}
-    <title>{{ complete_name }} | {{ title }} | PyCon Colombia 2020</title>
+    <title>{{ complete_name }} | {{ title }} | PyCon Colombia 2021</title>
 {% endblock %}
 
 {%- block body -%}

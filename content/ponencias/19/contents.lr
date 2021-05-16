@@ -1,0 +1,27 @@
+name: Shinyproxy + k8s: cómo disponibilizar las aplicaciones desarrolladas en Dash(python) o Shiny (R)
+---
+authors: mateo-graciano
+---
+description: Como cientificos o analistas de datos  la entrega de resultados es una parte fundamental de nuestro dia a dia. Actualmente hay muchas formas de hacer dashboards que para muchos casos es la mejor solución por la velocidad de implementación (Power BI, Tableau, Data Studio) pero muchas veces se necesita una pizca extra de personalización y por eso es buena idea implementar aplicaciones utilizando Shiny(R) o Dash.
+
+La gran diferencia entre Shiny y Dash es con la soluciones estandar es que estas no tienen una forma sencilla para hacer el despliegue a producción para que el resto del equipo tenga acceso a nuestros resultados, una primera solución puede ser optar por los servicios pagos para hacer el host de las aplicaciones pero dado que generalmente preferimos las soluciones más opensource una excelente idea es utilizar algo llamado Shinyproxy.
+
+La idea de la charla es ver cómo se puede utilizar shinyproxy para hacer un despliegue en kubernetes utilizando github actions para tener despliegues automaticos y hacer disponibles nuestras aplicaciones para todas las personas dentro de nuestra organización. Otros puntos por los que es bueno utilizar este tipo de solución son los siguientes:
+
+- Escalamiento horizontal, si utilizamos k8s tenemos flexibilidad de prender tantos pods como sea necesario en caso de que tengamos un cluster dinamico.
+
+- Manejo de versiones por aplicación: Te ha pasado qué tienes una aplicacación que necesita un paquete que es incompatible con otra aplicación y ya nada funciona? Con shinyproxy cada aplicación puede correr con su imagen de docker independdiente lo cual te soluciona este problema
+
+- Proceso de autenticacion: Puedes tener un proceso de autenticación, ya sea por seguridad o para personalizar la experiencia por usuario.
+
+En general la charla se puede considerar cómo una introducción a shinyproxy y vamos a ver cómo he logrado anteriormente la publicación de aplicaciones de shiny y dash. Es importante tener algo de conocimientos basicos de Docker, saber por encima qué hace kubernetes. 
+---
+language: es
+---
+summary: 
+---
+topic: Other, Machine Learning, Web
+---
+type: talk
+---
+    

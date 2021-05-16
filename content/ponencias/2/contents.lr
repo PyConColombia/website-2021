@@ -1,0 +1,15 @@
+name: #NoMoreMatildas: Desarrollando un agente conversational de preguntas y respuestas para descubrir el legado de las mujeres en la ciencia, usando modelos de comprensión de lenguaje natural de Hugging Face
+---
+authors: carla-marcela-florida-roman
+---
+description: La Inteligencia Artificial (IA) es la cúspide de la digitalización; es una tecnología que revolucionará la forma en que trabajamos y vivimos. Con IA, podemos desarrollar modelos capaces de comprender lenguaje natural y de responder preguntas en base a diferentes fuentes de datos. En esta charla presentaremos el desarrollo de un agente conversacional, en Python, capaz de responder preguntas acerca del legado de mujeres científicas. Mostraremos cómo recolectamos datos de Wikipedia y creamos nuestros datos de entrenamiento. Presentaremos también como re-entrenar modelos de Deep Learning de Huggin Face con datos propios, en este caso relacionados al legado de mujeres científicas. Nuestra motivación de este desarrollo, nace debido al bajo porcentaje de mujeres científicas (28,5%, según la Unesco). Este agente conversacional actúa como una interfaz de usuario en lenguaje natural para para diseminar hechos históricos que muestran que las mujeres pueden tener una gran contribución en áreas como la ciencia y tecnología, motivando a jóvenes mujeres a seguir el ejemplo de grandes personajes de la historia de la humanidad.
+---
+language: es
+---
+summary: 
+---
+topic: Other, Machine Learning, Scientific Computing
+---
+type: talk
+---
+    

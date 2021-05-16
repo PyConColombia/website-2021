@@ -1,0 +1,24 @@
+name: Reducing Deep Learning training times with data parallelism strategies and TensorFlow Distribute
+---
+authors: juan-manuel-munoz-betancur
+---
+description: How many times have you found yourself in a situation in which you have a good budget to train a model but your time for the project is limited? Wouldn’t you like your model to train about 4, 8 or even more times faster?
+
+Distributed training is a need when training state of the art deep learning models. Just to give an example, GPT-3 has 175 billion parameters and even with one good GPU it would take approximately 355 years to train.
+
+In Deep Learning training there are two main strategies to take advantage of increasing the amount of hardwares resources and to achieve faster training. One of them is called Data Parallelism which replicates a model in different machines and passes smaller batches to each machine. The other one is Model Parallelism, in which different parts of a model are distributed across different machines.
+
+The goal of this presentation is to give an introduction about parallel training, making special emphasis on data parallelism and its main characteristics. I will also present a demo of how the TensorFlow.Distribute API can be used to accelerate training adding 1 line of code with a Keras model or up to less than 10 lines of code with a custom model and a custom training loop.
+
+
+
+---
+language: en
+---
+summary: 
+---
+topic: Other, Computer Vision, Machine Learning, Scientific Computing
+---
+type: talk
+---
+    

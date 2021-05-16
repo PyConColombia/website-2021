@@ -1,0 +1,25 @@
+name: Monitoreo de salud de un website: El coctel ganador entre selenium, docker y opsgenie
+---
+authors: jose-reyes-garcia-delgado
+---
+description: En esta charla se abordará una solución que desde su concepción parece simple, ¿Cómo saber si un website tiene problemas?
+
+Se compartirá una solución de la vida real, que responde a las siguientes preguntas:
+
+- ¿Qué herramienta utilizo para saber si mi sitio web tiene problemas?
+- ¿Cómo puedo crear robots que me permitan conocer la salud de mi sitio web?
+- ¿Cómo paso de un script de pruebas a un despliegue en diferentes servidores?
+- ¿Cómo notifico a un equipo cuando hay un problema?
+- ¿Cómo monitoreo que mi robot este arriba y funcionando? (el check del check)
+
+Trataremos temas y herramientas como selenium, docker, celery y opsgenie para elaborar una solución de backend de monitoreo de un sitio web, así como notificación en caso de problemas.
+---
+language: es
+---
+summary: 
+---
+topic: Other
+---
+type: talk
+---
+    

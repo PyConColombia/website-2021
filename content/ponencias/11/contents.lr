@@ -1,0 +1,15 @@
+name: Taking your data science code to production level using Kedro 
+---
+authors: ivan-torroledo
+---
+description: Have you had problems taking your machine learning model to production level? or has collaborative work been a nightmare in your data science projects? Over time, machine learning models have advanced with a dramatical speed, creating complex solutions to almost any data science problem. However, good practices and standards on how to take models to production level have been underestimated. Kedro, the first open-source tool created by QuantumBlack labs, implements a quick and simple solution to solve these problems. Kedro is a framework to make it easy to deploy machine learning models in production because apply software engineering principles to data science and data engineering. Some of its key features are structured data pipelines using software engineering principles, modular units of code easily tested, code reproducibility in different environments, and production of well-documented code.
+---
+language: es
+---
+summary: 
+---
+topic: Other, Machine Learning
+---
+type: talk
+---
+    
