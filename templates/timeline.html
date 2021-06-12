@@ -3,7 +3,25 @@
 {% extends "layout.html" %}
 
 {%- block body -%}
-
-    {% include './partials/_timeline.html' %}
-
+    <section class="section-container">
+        <article class="timeline">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                    <div class="title-intro">
+                        <img src="{{ base_url }}static/img/title.webp" alt="title">
+                        <div class="intro-container">
+                            <h2><span>{{ this.title }}</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="content">
+                        <object id="content-iframe" data="{{ base_url }}static/schedule.pdf" type="application/pdf">
+                            <embed src="{{ base_url }}static/schedule.pdf" type="application/pdf" />
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
 {%- endblock -%}

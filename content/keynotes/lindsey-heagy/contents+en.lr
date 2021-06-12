@@ -1,4 +1,4 @@
-name: Lindsey
+image: profile.jpeg
 ---
 information: Lindsey Heagy is an Assistant professor in the department of Earth, Ocean and Atmospheric Science at the University of British Columbia. Her research interests are in advancing data science and inversion techniques with geophysical data for characterizing the subsurface She is a co-founder and project-lead for SimPEG, an open-source software project for geophysical inversions. In 2019, she was awarded the Gerald W. Hohmann Outstanding Young Scientist award for advances in simulation and inversion of electromagnetic data and promotion of an open-source culture for collaborative, inclusive and reproducible research. She is a Distinguished Contributor in the Jupyter project and is a co-founder of 2i2c, a non-profit aimed at making interactive computing accessible to researchers and educators. She is also an advisor for Curvenote, a startup working on a writing platform for science.
 ---
@@ -6,14 +6,12 @@ keynote: yes
 ---
 last_name: Heagy
 ---
+name: Lindsey
+---
 position_1:
 
 Contributor to Jupyter, 2i2c, and open geoscience tools 
 ---
 position_2: Assistant Professor at the University of British Columbia
 ---
-image: profile.jpeg
----
 publish: yes
----
-video_code: z4q3GPxHV0w
