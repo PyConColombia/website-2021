@@ -1,6 +1,6 @@
 name: Zina-LSV (Nokia)
 ---
-confirmed: no
+confirmed: yes
 ---
 category: bronze
 ---
@@ -11,3 +11,5 @@ Somos una compañía especializada en Transformación Digital e Industria 4.0 co
 Apoyamos a las empresas con: consultoría y desarrollo de soluciones integrales, a través de RPA (Robotic Process Automation), AI (Inteligencia Artificial), Machine Learning, Big Data entre otros. Soportamos a las organizaciones en sus procesos de toma de decisiones con Inteligencia para mejorar el desempeño y la sostenibilidad del negocio.
 ---
 web: https://lsv-tech.com/
+---
+image_alt: ZINA_LSV.svg
