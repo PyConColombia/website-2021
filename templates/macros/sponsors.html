@@ -30,12 +30,11 @@
     </div>
 {% endmacro %}
 
-{% macro render_sponsors_web(sponsor_list) %}
-    <div class="col-md-6 col-xs-12">
-        {% for item in sponsor_list %}
+{% macro render_sponsors_web(sponsor_list, size_alt) %}
+    {% for item in sponsor_list %}
         <div class="row">
             {% if item.image_alt %}
-                <div class="col-sm-12 mx-auto">
+                <div class="col-md-{{size_alt}} col-sm-12 mx-auto">
                     <div class="sponsor-web">
                         <a href="{{ item | url }}">
                             <img src="/patrocinadores/{{ item._id }}/{{ item.image_alt }}" />
@@ -56,6 +55,5 @@
                 </div>
             {% endif %}
         </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 {% endmacro %}
