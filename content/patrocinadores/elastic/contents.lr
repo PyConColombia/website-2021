@@ -7,3 +7,5 @@ confirmed: yes
 web: https://www.elastic.co/
 ---
 image_alt: elastic.svg
+---
+redirect: yes
