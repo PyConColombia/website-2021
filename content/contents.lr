@@ -5,8 +5,10 @@ event
 ---
 _template: index.html
 ---
-sections: timeline, news, newsletter, keynotes, tickets
+sections: timeline, news, newsletter, keynotes, tickets, after-movie
 ---
 accepted_speakers_link: https://forms.gle/NeoGPiRcVFAJUYqh7
 ---
 tickets_link: https://www.eventbrite.com/e/pycon-colombia-2021-tickets-150344629835
+---
+intro_video: _zXKOXHqCT8

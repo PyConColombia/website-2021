@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md-10 col-sm-12">
                     <div class="content">
-                        {% for name, categories in [['Organizers', ['Organizer', 'Co-Organizer']], ['Collaborators', ['Collaborator']]] %}
+                        {% for name, categories in [['Organizers', ['Organizer', 'Co-Organizer']], ['Collaborators', ['Collaborator']], ['Volunteers', ['Volunteer']]] %}
                             <div class="row">
                                 <div class="col-sm-12">
                                     {%- set title = transbag('translate', this.alt, name) -%}

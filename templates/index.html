@@ -38,6 +38,25 @@
 {%- set t_title_keynotes = transbag('translate', this.alt, 'title_keynotes') -%}
 
 {%- block body -%}
+    {% if 'after-movie' in this.sections %}
+        <!-- Modal -->
+        <div class="modal fade" id="intro-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close-modal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ this.intro_video }}" id="video" allowscriptaccess="always"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
     {% if 'news' in this.sections %}
         {% include './partials/_news.html' %}
     {% endif %}
@@ -207,4 +226,14 @@
         {% include './partials/_newsletter.html' %}
     {% endif %}
     
+    {% if 'after-movie' in this.sections %}
+        <script type="text/javascript">
+            $(window).on('load', function () {
+                $('#intro-modal').modal('show');
+                $("#intro-modal").on('hidden.bs.modal', function () {
+                    $("#intro-modal iframe").attr("src", null);
+                });
+            });
+        </script>
+    {% endif %}
 {%- endblock -%}
